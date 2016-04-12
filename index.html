@@ -13,28 +13,29 @@
 
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-   <script src="node_modules/rxjs/bundles/Rx.js"></script>
-   <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-   <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
-   <link rel="stylesheet" href="build/css/styles.css">
+    <link rel="stylesheet" href="build/css/styles.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
-   <script>
-   System.config({
-     map: {
-       'rxjs': 'node_modules/rxjs'
-     },
-     packages: {
-       app: {
-         format: 'register',
-         defaultExtension: 'js'
-       },
-       'rxjs': {defaultExtension: 'js'}
-     }
-   });
-   System.import('app/main')
-   .then(null, console.error.bind(console));
-   </script>
+    <script>
+    System.config({
+      map: {
+        'rxjs': 'node_modules/rxjs'
+      },
+      packages: {
+        app: {
+          format: 'register',
+          defaultExtension: 'js'
+        },
+        'rxjs': {defaultExtension: 'js'}
+      }
+    });
+    System.import('app/main')
+    .then(null, console.error.bind(console));
+    </script>
 
   </head>
   <body>
