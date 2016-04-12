@@ -1,5 +1,14 @@
-h1 {
-  color: blue;
+body, html {
+  height: 100%;
+}
+
+div.wrap {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .charity-list {
