@@ -48,5 +48,23 @@ $(function() {
         left: '180%'
       }, 500);
     });
+    $('.homeCartShow').click(function() {
+      $('.cart').fadeIn(500);
+      $('.home').fadeOut();
+      $('.charity-list').fadeOut();
+      $('.cards').fadeOut();
+    });
+    $('.homeFadeIn').click(function(event) {
+      $('.cards').animate({
+        left: '-180%'
+      });
+      $('.home').animate({
+        left: '0'
+      });
+      $('.cart').fadeOut();
+      $('.home').fadeIn();
+      $('.charity-list').fadeIn();
+      $('.cards').fadeIn();
+    });
   }, 1000);
 });

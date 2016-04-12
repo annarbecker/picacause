@@ -2,11 +2,16 @@ import { Component } from 'angular2/core';
 import {Observable} from 'rxjs/Rx';
 import {Http, Response} from 'angular2/http';
 import { CharityListComponent } from './charity-list.component';
+import { SignUpComponent } from './sign-up.component';
+import {PicListComponent} from './pic-list.component';
+import {CartComponent} from './cart.component';
+import {Card} from './card.model';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent],
+  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent],
   template: `
+
   <header>
     <div class="container header">
       <p class="logo">pica<span>cause</span></p>
@@ -41,11 +46,40 @@ import { CharityListComponent } from './charity-list.component';
     </div>
   </section>
 
+
+  <button class="homeCartShow">Items in cart:{{cartCount}}</button>
+  <div class="home">
+    <p>Site Mission</p>
+    <button class="homeNewCharitySlide">View All Charities</button>
+    <button class="homeCardsSlide">View All Cards</button>
+  </div>
+  <div class="charity-list">
+    <charity-list></charity-list>
+    <button class="newCharityHomeSlide">Home</button>
+  </div>
+  <div class="cards">
+    <p>All Cards</p>
+    <button class="cardsHomeSlide">Home</button>
+    <pic-list
+      [cart]="cart"
+      (onAddToCart)="addToCart($event)">
+    </pic-list>
+  </div>
+  <div class="cart">
+    <cart [cart]="cart"></cart>
+    <button class="homeFadeIn">Home</button>
+  </div>
+  <br>
+  <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
+
     `
 })
 
 export class AppComponent {
   public pics = [];
+  public cart = [];
+  public cartCount = 0;
+  public myDataRef = new Firebase('https://picacause.firebaseio.com/')
 
   constructor(private http:Http) {}
 
@@ -62,5 +96,20 @@ export class AppComponent {
       // the third argument is a function which runs on completion
       () => console.log(this.pics)
     );
+  }
+
+  addToCart(clickedPic) {
+    this.cart.push(new Card(clickedPic.images.standard_resolution.url, clickedPic.user.username, "", "", 5));
+    console.log(this.cart);
+    return this.cartCount = this.cart.length;
+  }
+
+  createUser(userArray: Array<any>) {
+    var usersRef = this.myDataRef.child("users");
+    console.log('it works');
+    usersRef.push({
+      username: userArray[0],
+      password: userArray[1]
+    });
   }
 }
