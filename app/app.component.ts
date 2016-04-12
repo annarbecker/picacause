@@ -3,11 +3,15 @@ import {Observable} from 'rxjs/Rx';
 import {Http, Response} from 'angular2/http';
 import { CharityListComponent } from './charity-list.component';
 import { SignUpComponent } from './sign-up.component';
+import {PicListComponent} from './pic-list.component';
+import {CartComponent} from './cart.component';
+import {Card} from './card.model';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent, SignUpComponent],
+  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent],
   template: `
+  <button class="homeCartShow">Items in cart:{{cartCount}}</button>
   <div class="home">
     <p>Site Mission</p>
     <button class="homeNewCharitySlide">View All Charities</button>
@@ -20,10 +24,14 @@ import { SignUpComponent } from './sign-up.component';
   <div class="cards">
     <p>All Cards</p>
     <button class="cardsHomeSlide">Home</button>
-    <h2>API test</h2>
-    <div *ngFor="#currentPic of pics">
-      <img src="{{currentPic.images.standard_resolution.url}}">
-    </div>
+    <pic-list
+      [cart]="cart"
+      (onAddToCart)="addToCart($event)">
+    </pic-list>
+  </div>
+  <div class="cart">
+    <cart [cart]="cart"></cart>
+    <button class="homeFadeIn">Home</button>
   </div>
   <br>
   <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
@@ -32,6 +40,8 @@ import { SignUpComponent } from './sign-up.component';
 
 export class AppComponent {
   public pics = [];
+  public cart = [];
+  public cartCount = 0;
   public myDataRef = new Firebase('https://picacause.firebaseio.com/')
 
   constructor(private http:Http) {}
@@ -49,6 +59,12 @@ export class AppComponent {
       // the third argument is a function which runs on completion
       () => console.log(this.pics)
     );
+  }
+
+  addToCart(clickedPic) {
+    this.cart.push(new Card(clickedPic.images.standard_resolution.url, clickedPic.user.username, "", "", 5));
+    console.log(this.cart);
+    return this.cartCount = this.cart.length;
   }
 
   createUser(userArray: Array<any>) {
