@@ -7,24 +7,40 @@ import { CharityListComponent } from './charity-list.component';
   selector: 'my-app',
   directives: [CharityListComponent],
   template: `
-  <div class="home">
-    <p>Site Mission</p>
-    <button class="homeNewCharitySlide">View All Charities</button>
-    <button class="homeCardsSlide">View All Cards</button>
-  </div>
-  <div class="charity-list">
-    <charity-list></charity-list>
-    <button class="newCharityHomeSlide">Home</button>
-  </div>
-  <div class="cards">
-    <p>All Cards</p>
-    <button class="cardsHomeSlide">Home</button>
-    <h2>API test</h2>
-    <div *ngFor="#currentPic of pics">
-      <img src="{{currentPic.images.standard_resolution.url}}">
+  <header>
+    <div class="container header">
+      <p class="logo">pica<span>cause</span></p>
+      <ul>
+        <li><a class="newCharityHomeSlide" href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
     </div>
-  </div>
-  <br>
+  </header>
+  <section>
+
+    <div class="home">
+      <div class="homeNewCharitySlide">
+        <img src="../build/img/heart.svg">
+      </div>
+      <div class="homeCardsSlide">
+        <img src="../build/img/heart.svg">
+      </div>
+    </div>
+    <div class="charity-list">
+      <charity-list></charity-list>
+      <button class="newCharityHomeSlide">Home</button>
+    </div>
+    <div class="cards">
+      <p>All Cards</p>
+      <button class="cardsHomeSlide">Home</button>
+      <h2>API test</h2>
+      <div *ngFor="#currentPic of pics">
+        <img src="{{currentPic.images.standard_resolution.url}}">
+      </div>
+    </div>
+  </section>
+
     `
 })
 
