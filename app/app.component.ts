@@ -11,6 +11,10 @@ import { NewCharityComponent } from './new-charity.component';
     <div class="charity-form">
       <new-charity></new-charity>
     </div>
+    <button class="homeCardsSlide">View All Cards</button>
+    <div class="cards">
+      <p>All Cards</p>
+    </div>
   </div>
     `
 })
