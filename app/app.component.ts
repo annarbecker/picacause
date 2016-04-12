@@ -30,10 +30,12 @@ import { CharityListComponent } from './charity-list.component';
 
 export class AppComponent {
   public pics = [];
+  public myDataRef = new Firebase('https://picacause.firebaseio.com/')
 
   constructor(private http:Http) {}
 
   ngOnInit() {
+    console.log(this.myDataRef);
     this.getFoods();
   }
 
