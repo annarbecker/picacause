@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { Charity } from './charity.model';
-import { NewCharityComponent } from './new-charity.component';
+import {NewCharityComponent} from './new-charity.component';
 
 
 @Component({
