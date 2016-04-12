@@ -20,9 +20,9 @@ import { CharityListComponent } from './charity-list.component';
     <p>All Cards</p>
     <button class="cardsHomeSlide">Home</button>
     <h2>API test</h2>
-    <ul *ngFor="#currentPic of pics">
-    <img src="{{currentPic.images.standard_resolution.url}}">
-    </ul>
+    <div *ngFor="#currentPic of pics">
+      <img src="{{currentPic.images.standard_resolution.url}}">
+    </div>
   </div>
   <br>
     `
