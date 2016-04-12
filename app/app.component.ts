@@ -2,10 +2,11 @@ import { Component } from 'angular2/core';
 import {Observable} from 'rxjs/Rx';
 import {Http, Response} from 'angular2/http';
 import { CharityListComponent } from './charity-list.component';
+import { SignUpComponent } from './sign-up.component';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent],
+  directives: [CharityListComponent, SignUpComponent],
   template: `
   <div class="home">
     <p>Site Mission</p>
@@ -25,6 +26,7 @@ import { CharityListComponent } from './charity-list.component';
     </div>
   </div>
   <br>
+  <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
     `
 })
 
@@ -35,7 +37,6 @@ export class AppComponent {
   constructor(private http:Http) {}
 
   ngOnInit() {
-    console.log(this.myDataRef);
     this.getFoods();
   }
 
@@ -48,5 +49,14 @@ export class AppComponent {
       // the third argument is a function which runs on completion
       () => console.log(this.pics)
     );
+  }
+
+  createUser(userArray: Array<any>) {
+    var usersRef = this.myDataRef.child("users");
+    console.log('it works');
+    usersRef.push({
+      username: userArray[0],
+      password: userArray[1]
+    });
   }
 }

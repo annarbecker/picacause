@@ -10,7 +10,7 @@ import { NewCharityComponent } from './new-charity.component';
   <div class="charityList">
     <h4>Charities:</h4>
     <div *ngFor="#currentCharity of charityList">
-      <img src="{{currentCharity.image}}">
+      <img class="charityImage" src="{{currentCharity.image}}">
       <p>{{currentCharity.name}}</p>
     </div>
     <button class="listNewCharitySlide">New Charity</button>
@@ -24,7 +24,6 @@ import { NewCharityComponent } from './new-charity.component';
 export class CharityListComponent {
   public charityList: Charity[];
   public myDataRef = new Firebase('https://picacause.firebaseio.com/')
-  public charities;
 
   constructor(){
     this.charityList = [];
@@ -32,20 +31,20 @@ export class CharityListComponent {
 
   ngOnInit() {
     var charityListClass = this;
+
+    //this event emitter fires once on page load and every time firebase is updated
     charityListClass.myDataRef.on("value", function(snapshot) {
+      //clear charityList array
       charityListClass.charityList = [];
-      charityListClass.charities = snapshot.val().charities;
-      for(var key in charityListClass.charities) {
+      //save results to array
+      var charities = snapshot.val().charities;
+      for(var key in charities) {
         //Skip loop if property is from prototype
-        if(!charityListClass.charities.hasOwnProperty(key)) continue;
-        var obj = charityListClass.charities[key];
+        if(!charities.hasOwnProperty(key)) continue;
+        //save and push each object in charities to charityList
+        var obj = charities[key];
         charityListClass.charityList.push(obj);
-        // for(var prop in obj) {
-        //   if(!obj.hasOwnProperty(prop)) continue;
-        //
-        // }
       }
-      console.log(charityListClass.charityList);
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
