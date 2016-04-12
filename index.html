@@ -15,23 +15,31 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
    <script src="node_modules/rxjs/bundles/Rx.js"></script>
    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+   <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
    <link rel="stylesheet" href="build/css/styles.css">
 
+   <script>
+   System.config({
+     map: {
+       'rxjs': 'node_modules/rxjs'
+     },
+     packages: {
+       app: {
+         format: 'register',
+         defaultExtension: 'js'
+       },
+       'rxjs': {defaultExtension: 'js'}
+     }
+   });
+   System.import('app/main')
+   .then(null, console.error.bind(console));
+   </script>
+
   </head>
   <body>
-    <my-app>Loading...</my-app>
+    <div class="wrap">
+      <my-app>Loading...</my-app>
+    </div>
   </body>
-  <script>
-    System.config({
-      packages: {
-        app: {
-          format: 'register',
-          defaultExtension: 'js'
-        }
-      }
-    });
-    System.import('app/main')
-          .then(null, console.error.bind(console));
-  </script>
 </html>

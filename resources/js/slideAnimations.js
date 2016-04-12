@@ -34,7 +34,7 @@ $(function() {
     });
     $('.listNewCharitySlide').click(function() {
       $('.charityList').animate({
-        left: '-180%'
+        left: '180%'
       }, 500);
       $('.newCharity').animate({
         left: '0'
