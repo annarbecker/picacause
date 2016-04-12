@@ -1,0 +1,66 @@
+//general buttons
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  padding: 0.8rem;
+  // width: 2rem;
+  // height: 2rem;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 darken(lightblue, 10%);
+  transition: all 0.05s ease-in-out;
+  // font-size: 2.5rem;
+  color: darken(lightblue, 30%);
+  &:hover {
+    box-shadow: none;
+    cursor: pointer;
+    transform: translate(0, 5px);
+  }
+}
+//direction buttons
+.direction-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  padding: 0.8rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 darken(lightblue, 10%);
+  transition: all 0.05s ease-in-out;
+  p {
+    font-size: 2.5rem;
+    color: darken(lightblue, 30%);
+  }
+  &:hover {
+    box-shadow: none;
+    cursor: pointer;
+    transform: translate(0, 5px);
+  }
+}
+
+.arrow-up {
+  p {
+    margin: 0.3rem 0 0 0rem;
+  }
+}
+.arrow-down {
+  p {
+    transform:scaleY(-1);
+  }
+}
+.arrow-right {
+  p {
+    margin: 0.4rem 0 0 0.4rem;
+    transform:scaleX(-1);
+  }
+}
+.arrow-left {
+  p {
+    margin: 0.4rem 0.4rem 0 0;
+  }
+}

@@ -1,0 +1,137 @@
+// @import resources/styles/_buttons;
+@import 'buttons';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Work Sans', sans-serif;
+}
+a {
+  text-decoration: none;
+  // color: black;
+  &:hover {
+    color: tomato;
+    text-decoration: none;
+  }
+}
+body, html {
+
+}
+// .container {
+//   width: 980;
+//   margin: 0 auto;
+// }
+div.wrap {
+  overflow-x: hidden;
+}
+my-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+body {
+  overflow-x: hidden;
+}
+header {
+  background-color: lightgray;
+  width: 100%;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  // width: 40%;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+  }
+}
+section {
+  flex: 1;
+}
+
+footer {
+  background-color: lightgray;
+  height: 6rem;
+  width: 100%;
+
+}
+
+.charity-list {
+  position: absolute;
+  left: 7000px;
+  right: 0;
+  top: 0;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.cards {
+  position: absolute;
+  left: -7000px;
+  right: 0;
+  top: 100;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+
+//•••••• HOME PAGE •••••••
+.homeNewCharitySlide {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: salmon;
+  height: 100vh;
+  // padding: 20% 0;
+  flex: 1 1 50%
+}
+
+.homeCardsSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: turquoise;
+  height: 100vh;
+  // width: 50%;
+  flex: 1 1 50%
+}
+.home {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.charityList {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 100;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+.newCharity {
+  position: relative;
+  left: 4000px;
+  right: 0;
+  top: 100;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
