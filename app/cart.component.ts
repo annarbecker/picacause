@@ -1,10 +1,13 @@
-import { Component } from 'angular2/core';
+import {Component} from 'angular2/core';
+import {Card} from './card.model';
+
 
 @Component({
   selector: 'cart',
+  inputs: ['cart'],
   template: `
   <div *ngFor="#item of cart">
-    <h2>{{item.photographer}}
+    <p>{{item.photographer}}</p>
   </div>
   `
 })
