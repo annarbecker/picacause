@@ -2,15 +2,14 @@ h1 {
   color: blue;
 }
 
-.charity-form {
+.charity-list {
   position: absolute;
-  left: 0;
+  left: 7000px;
   right: 0;
-  top: 7000px;
+  top: 0;
   width: 80%;
   height: auto;
   margin: auto;
-  display: none;
 }
 
 .cards {
@@ -26,6 +25,25 @@ h1 {
 .home {
   position: absolute;
   left: 0;
+  right: 0;
+  top: 100;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.charityList {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 100;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+.newCharity {
+  position: relative;
+  left: 4000px;
   right: 0;
   top: 100;
   width: 80%;
