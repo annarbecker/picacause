@@ -5,20 +5,21 @@ import {Charity} from './charity.model';
   selector: 'new-charity',
   outputs: ['onSubmitNewCharity'],
   template:`
-  <p>Add New Charity</p>
-  <input placeholder="Name" #newName>
-  <input placeholder="Mission Statement" #newMission>
-  <input placeholder="Image" #newImage>
-  <input placeholder="Contact Email" #newContact>
-  <input placeholder="Fundraising Goal" #newGoal>
-  <select #newCategory>
-    <option value="youth">Youth Development</option>
-    <option value="animals">Animals</option>
-    <option value="community">Community</option>
-    <option value="enviornment">Environment</option>
-  </select>
-  <input placeholder="Desired photo hashtags" #newHashtag>
-  <button (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCharity, newHashtag)">Add</button>
+
+    <p>Add New Charity</p>
+    <input placeholder="Name" #newName>
+    <input placeholder="Mission Statement" #newMission>
+    <input placeholder="Image" #newImage>
+    <input placeholder="Contact Email" #newContact>
+    <input placeholder="Fundraising Goal" #newGoal>
+    <select #newCategory>
+      <option value="youth">Youth Development</option>
+      <option value="animals">Animals</option>
+      <option value="community">Community</option>
+      <option value="enviornment">Environment</option>
+    </select>
+    <input placeholder="Desired photo hashtags" #newHashtag>
+    <button (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCharity, newHashtag)">Add</button>
   `
 })
 
