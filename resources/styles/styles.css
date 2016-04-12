@@ -6,15 +6,26 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
+  top: 7000px;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: none;
+}
+
+.cards {
+  position: absolute;
+  left: -7000px;
+  right: 0;
   top: 100;
   width: 80%;
   height: auto;
   margin: auto;
 }
 
-.cards {
+.home {
   position: absolute;
-  left: -7000px;
+  left: 0;
   right: 0;
   top: 100;
   width: 80%;

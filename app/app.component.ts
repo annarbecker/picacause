@@ -8,13 +8,15 @@ import { NewCharityComponent } from './new-charity.component';
   <div class="home">
     <p>Site Mission</p>
     <button class="homeNewCharitySlide">Add a new Charity</button>
-    <div class="charity-form">
-      <new-charity></new-charity>
-    </div>
     <button class="homeCardsSlide">View All Cards</button>
-    <div class="cards">
-      <p>All Cards</p>
-    </div>
+  </div>
+  <div class="charity-form">
+    <new-charity></new-charity>
+    <button class="newCharityHomeSlide">Home</button>
+  </div>
+  <div class="cards">
+    <p>All Cards</p>
+    <button class="cardsHomeSlide">Home</button>
   </div>
     `
 })
