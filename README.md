@@ -1,11 +1,11 @@
 ## Picacause
 
-#### A charity fundraising site | March 25, 2016
+#### A charity fundraising site| April 12, 2016
 
-#### By Anna Becker
+#### By Anna Becker, Dustin Davis, Matt Rosanio, Tyler Suderman
 
 ## Description
- A website where the user can log each food that they eat with some details about the meal and the number of calories for that portion.
+A charity fundraising site where users can submit or purchase photos to support featured charities.
 
 ## Setup/Installation Requirements
 
@@ -13,8 +13,8 @@ Clone this repository. Open terminal and:
 
 ```
 $ cd ~/Desktop
-$ git clone https://github.com/annarbecker/food-log.git
-$ cd food-log
+$ git clone https://github.com/annarbecker/picacause.git
+$ cd picacause
 ```
 
 Install Node tools
@@ -45,13 +45,13 @@ $ gulp serve
 
 ## Technologies Used
 
-Angular2 Javascript, Gulp, Bower, TypeScript
+Angular2 Javascript, Gulp, Bower, TypeScript, SASS
 
 ### License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2016 Anna Becker
+Copyright (c) 2016 Anna Becker, Dustin Davis, Matt Rosanio, Tyler Suderman
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
