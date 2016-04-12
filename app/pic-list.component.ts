@@ -1,10 +1,11 @@
-import {Component} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
 import {Observable} from 'rxjs/Rx';
 import {Card} from './card.model';
 import {Http, Response} from 'angular2/http';
 
 @Component ({
   selector: 'pic-list',
+  outputs: ['onAddToCart'],
   template: `
   <div class="picList">
     <h2>API test</h2>
@@ -17,8 +18,10 @@ import {Http, Response} from 'angular2/http';
 
 export class PicListComponent {
   public pics = [];
-  public cart = [];
-  constructor(private http:Http) {}
+  public onAddToCart: EventEmitter<any>;
+  constructor(private http:Http) {
+    this.onAddToCart = new EventEmitter();
+  }
 
   ngOnInit() {
     this.getPics();
@@ -36,7 +39,6 @@ export class PicListComponent {
   }
 
   addToCart(clickedPic): void {
-    this.cart.push(new Card(clickedPic.images.standard_resolution.url, clickedPic.user.username, "", "", 5));
-    console.log(this.cart);
+    this.onAddToCart.emit(clickedPic);
   }
 }
