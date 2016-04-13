@@ -67,7 +67,6 @@ footer {
   position: absolute;
   left: 7000px;
   right: 0;
-  top: 0;
   width: 80%;
   height: auto;
   margin: auto;
@@ -147,6 +146,9 @@ footer {
   max-width: 300px;
   height: auto;
 }
+
+.cart {
+  display: none;
 
 .picList {
   display: flex;

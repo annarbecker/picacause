@@ -7,12 +7,11 @@ import { Card } from './card.model';
   inputs: ['pic'],
   outputs: ['onAddToCart'],
   template: `
-    <button (click)="addToCart(currentPic)">Add to Cart</button>
+    <button (click)="addToCart(pic)">Add to Cart</button>
   `
 })
 
 export class PicDetailsComponent {
-  public pics = [];
   public onAddToCart: EventEmitter<any>;
   constructor() {
     this.onAddToCart = new EventEmitter();

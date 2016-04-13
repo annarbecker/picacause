@@ -6,13 +6,16 @@ import {PicDetailsComponent} from './pic-details.component'
 
 @Component ({
   selector: 'pic-list',
+  outputs: ['onAddToCart'],
   directives: [PicDetailsComponent],
   template: `
   <h2>API test</h2>
   <div class="picList">
+    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
+    <a target="blank" href="https://instagram.com/accounts/logout/">Instagram Logout</a>
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)">
-      <pic-details [pic]="currentPic" *ngIf="currentPic === selectedPic"></pic-details>
+      <pic-details [pic]="currentPic" *ngIf="currentPic === selectedPic" (onAddToCart)="addToCart($event)"></pic-details>
     </div>
   </div>
   `
@@ -21,8 +24,11 @@ import {PicDetailsComponent} from './pic-details.component'
 export class PicListComponent {
   public token = 'access_token=3128477430.8c5216d.5551b14da14a40ed9c77579a4d83484e';
   public pics = [];
+  public onAddToCart: EventEmitter<any>;
   public selectedPic: Card;
-  constructor(private http:Http) {}
+  constructor(private http:Http) {
+    this.onAddToCart = new EventEmitter();
+  }
 
   ngOnInit() {
     console.log(window.location.href);
@@ -55,5 +61,9 @@ export class PicListComponent {
     } else {
       this.selectedPic = clickedPic;
     }
+  }
+
+  addToCart(pic: Card) {
+    this.onAddToCart.emit(pic);
   }
 }

@@ -19,21 +19,26 @@ $(function() {
         left: '200%'
       }, 500);
     });
-    $('.newCharityHomeSlide').click(function() {
+    $('.homeSlide').click(function() {
+      var time;
+      if ($('.home').css('display') === 'none') {
+        time = 50;
+      } else {
+        time = 500;
+      }
       $('.charity-list').animate({
         left: '200%'
-      }, 500);
+      }, time);
       $('.home').animate({
         left: '0'
-      }, 500);
-    });
-    $('.cardsHomeSlide').click(function() {
+      }, time);
       $('.cards').animate({
         left: '-200%'
-      }, 500);
-      $('.home').animate({
-        left: '0'
-      }, 500);
+      }, time);
+      $('.home').fadeIn();
+      $('.charity-list').fadeIn();
+      $('.cards').fadeIn();
+      $('.cart').fadeOut();
     });
     $('.listNewCharitySlide').click(function() {
       $('.charity-list').animate({
@@ -56,21 +61,6 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
-    });
-    $('.homeFadeIn').click(function(event) {
-      $('.cards').animate({
-        left: '-200%'
-      });
-      $('.charity-list').animate({
-        left: '200%'
-      });
-      $('.home').animate({
-        left: '0'
-      });
-      $('.cart').fadeOut();
-      $('.home').fadeIn();
-      $('.charity-list').fadeIn();
-      $('.cards').fadeIn();
     });
     $('.charity>img').on('click', function() {
       var thisCharity = $(this).parent();
