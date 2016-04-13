@@ -86,7 +86,6 @@ footer {
   position: absolute;
   left: 7000px;
   right: 0;
-  top: 0;
   width: 80%;
   height: auto;
   margin: auto;
@@ -210,4 +209,32 @@ footer {
 .charityImage {
   max-width: 300px;
   height: auto;
+}
+
+.cart {
+  display: none;
+}
+
+.picList {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+}
+
+.picture {
+  border: 1px solid blue;
+  width: 640px;
+  height: auto;
+  margin: 1rem;
+}
+
+.shoppingCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+  }
 }

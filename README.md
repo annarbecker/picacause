@@ -1,6 +1,6 @@
 ## Picacause
 
-#### A charity fundraising site| April 12, 2016
+#### A charity fundraising site | April 12, 2016
 
 #### By Anna Becker, Dustin Davis, Matt Rosanio, Tyler Suderman
 
@@ -26,6 +26,11 @@ Install Bower tools
 ```
 $ bower init
 $ bower install
+```
+Install Firebase
+```
+$ npm install tsd -g
+$ tsd install firebase
 ```
 
 Install globals if needed (gulp, bower, sass, typescript, typescript packages.)

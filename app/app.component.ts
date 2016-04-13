@@ -16,7 +16,7 @@ import {Card} from './card.model';
     <div class="container header">
       <p class="logo">pica<span>cause</span></p>
       <ul>
-        <li><a class="newCharityHomeSlide" href="#">home</a></li>
+        <li><a class="homeSlide" href="#">home</a></li>
         <li><a href="#">about</a></li>
         <li><a href="#">contact</a></li>
         <li><a href="#" class="homeCartShow nav-cart-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 399.6 399.6" enable-background="new 0 0 399.6 399.6" width="2rem" height="2rem">
@@ -40,17 +40,16 @@ import {Card} from './card.model';
       </div>
       </div>
     </div>
-    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
-    <a target="blank" href="https://instagram.com/accounts/logout/">Instagram Logou</a>
 
     <div class="charity-list">
       <charity-list></charity-list>
-      <button class="newCharityHomeSlide">Home</button>
     </div>
     <div class="cards">
       <p>All Cards</p>
-      <button class="cardsHomeSlide">Home</button>
-      <pic-list></pic-list>
+      <pic-list
+        [clickedPic]="clickedPic"
+        (onAddToCart)=addToCart($event)>
+      </pic-list>
     </div>
     <div class="cart">
     <cart [cart]="cart"></cart>
@@ -68,7 +67,9 @@ export class AppComponent {
   constructor() {}
 
   addToCart(clickedPic) {
-    this.cart.push(new Card(clickedPic.images.standard_resolution.url, clickedPic.user.username, "", "", 5));
+    console.log('it works');
+    console.log(clickedPic);
+    this.cart.push(new Card(clickedPic[0].images.standard_resolution.url, clickedPic[0].user.username, "", "", 5, clickedPic[1]));
     console.log(this.cart);
     return this.cartCount = this.cart.length;
   }

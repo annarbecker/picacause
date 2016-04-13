@@ -19,21 +19,26 @@ $(function() {
         left: '200%'
       }, 500);
     });
-    $('.newCharityHomeSlide').click(function() {
+    $('.homeSlide').click(function() {
+      var time;
+      if ($('.home').css('display') === 'none') {
+        time = 50;
+      } else {
+        time = 500;
+      }
       $('.charity-list').animate({
         left: '200%'
-      }, 500);
+      }, time);
       $('.home').animate({
         left: '0'
-      }, 500);
-    });
-    $('.cardsHomeSlide').click(function() {
+      }, time);
       $('.cards').animate({
         left: '-200%'
-      }, 500);
-      $('.home').animate({
-        left: '0'
-      }, 500);
+      }, time);
+      $('.home').fadeIn();
+      $('.charity-list').fadeIn();
+      $('.cards').fadeIn();
+      $('.cart').fadeOut();
     });
     $('.listNewCharitySlide').click(function() {
       $('.charity-list').animate({
@@ -56,21 +61,6 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
-    });
-    $('.homeFadeIn').click(function(event) {
-      $('.cards').animate({
-        left: '-200%'
-      });
-      $('.charity-list').animate({
-        left: '200%'
-      });
-      $('.home').animate({
-        left: '0'
-      });
-      $('.cart').fadeOut();
-      $('.home').fadeIn();
-      $('.charity-list').fadeIn();
-      $('.cards').fadeIn();
     });
     $('.charity>img').on('click', function() {
       var thisCharity = $(this).parent();
@@ -101,5 +91,36 @@ $(function() {
         full = false;
       }
     });
+
+    $('.picture>img').on('click', function() {
+      var thisPic = $(this).parent();
+      console.log($(thisPic)[0]);
+      if(!full) {
+        $('.picture').each(function() {
+          if($(this)[0] !== $(thisPic)[0]){
+            $(this).hide();
+          }
+        });
+        d.height = "80vh";
+        d.width = "80vw";
+        $(this).parent().animate(d, speed, function(){
+
+        });
+        full=true;
+      } else {
+        d.width = "640px";
+        d.height = "640px";
+        $(this).parent().css("position","");
+        $(this).parent().animate(d, speed, function() {
+          $('.picture').each(function() {
+            if($(this)[0] !== $(thisPic)[0]) {
+              $(this).fadeIn('fast');
+            }
+          });
+        });
+        full = false;
+      }
+    });
+
   }, 1000);
 });
