@@ -16,7 +16,7 @@ import {Card} from './card.model';
     <div class="container header">
       <p class="logo">pica<span>cause</span></p>
       <ul>
-        <li><a class="newCharityHomeSlide" href="#">home</a></li>
+        <li><a class="homeSlide" href="#">home</a></li>
         <li><a href="#">about</a></li>
         <li><a href="#">contact</a></li>
       </ul>
@@ -37,11 +37,9 @@ import {Card} from './card.model';
 
     <div class="charity-list">
       <charity-list></charity-list>
-      <button class="newCharityHomeSlide">Home</button>
     </div>
     <div class="cards">
       <p>All Cards</p>
-      <button class="cardsHomeSlide">Home</button>
       <pic-list></pic-list>
     </div>
     <div class="cart">

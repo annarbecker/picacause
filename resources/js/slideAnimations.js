@@ -19,12 +19,15 @@ $(function() {
         left: '200%'
       }, 500);
     });
-    $('.newCharityHomeSlide').click(function() {
+    $('.homeSlide').click(function() {
       $('.charity-list').animate({
         left: '200%'
       }, 500);
       $('.home').animate({
         left: '0'
+      }, 500);
+      $('.cards').animate({
+        left: '-200%'
       }, 500);
     });
     $('.cardsHomeSlide').click(function() {
