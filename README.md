@@ -27,6 +27,11 @@ Install Bower tools
 $ bower init
 $ bower install
 ```
+Install Firebase
+```
+$ npm install tsd -g
+$ tsd install firebase
+```
 
 Install globals if needed (gulp, bower, sass, typescript, typescript packages.)
 ```
