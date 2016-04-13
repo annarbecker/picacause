@@ -152,14 +152,25 @@ footer {
 }
 
 .picList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
 }
 
 .picture {
   border: 1px solid blue;
-  width: 150;
+  width: 640px;
   height: auto;
   margin: 1rem;
+}
+
+.shoppingCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+  }
 }
