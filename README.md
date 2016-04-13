@@ -1,6 +1,6 @@
 ## Picacause
 
-#### A charity fundraising site| April 12, 2016
+#### A charity fundraising site | April 12, 2016
 
 #### By Anna Becker, Dustin Davis, Matt Rosanio, Tyler Suderman
 
