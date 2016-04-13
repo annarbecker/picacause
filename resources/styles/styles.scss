@@ -149,6 +149,7 @@ footer {
 
 .cart {
   display: none;
+}
 
 .picList {
   display: flex;
@@ -161,4 +162,15 @@ footer {
   width: 150;
   height: auto;
   margin: 1rem;
+}
+
+.shoppingCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+  }
 }

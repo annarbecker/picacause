@@ -61,7 +61,7 @@ export class AppComponent {
   addToCart(clickedPic) {
     console.log('it works');
     console.log(clickedPic);
-    this.cart.push(new Card(clickedPic.images.standard_resolution.url, clickedPic.user.username, "", "", 5));
+    this.cart.push(new Card(clickedPic[0].images.standard_resolution.url, clickedPic[0].user.username, "", "", 5, clickedPic[1]));
     console.log(this.cart);
     return this.cartCount = this.cart.length;
   }
