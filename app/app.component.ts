@@ -22,8 +22,9 @@ import {Card} from './card.model';
       </ul>
     </div>
   </header>
-  <section>
 
+
+  <section>
     <div class="home">
       <div class="homeNewCharitySlide">
         <img src="../build/img/heart.svg">
@@ -32,6 +33,9 @@ import {Card} from './card.model';
         <img src="../build/img/heart.svg">
       </div>
     </div>
+    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
+    <a target="blank" href="https://instagram.com/accounts/logout/">Instagram Logou</a>
+
     <div class="charity-list">
       <charity-list></charity-list>
       <button class="newCharityHomeSlide">Home</button>
@@ -46,9 +50,9 @@ import {Card} from './card.model';
     </div>
   </section>
 
-
   <button class="homeCartShow">Items in cart:{{cartCount}}</button>
   <div class="home">
+
     <p>Site Mission</p>
     <button class="homeNewCharitySlide">View All Charities</button>
     <button class="homeCardsSlide">View All Cards</button>
