@@ -43,10 +43,8 @@ import {Card} from './card.model';
     </div>
     <div class="cart">
     <cart [cart]="cart"></cart>
-    <button class="homeFadeIn">Home</button>
+
     </div>
-    <br>
-    <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
   </section>
 
 
