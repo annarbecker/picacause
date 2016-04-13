@@ -147,3 +147,16 @@ footer {
   max-width: 300px;
   height: auto;
 }
+
+.picList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.picture {
+  border: 1px solid blue;
+  width: 150;
+  height: auto;
+  margin: 1rem;
+}
