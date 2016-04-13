@@ -40,14 +40,6 @@ $(function() {
       $('.cards').fadeIn();
       $('.cart').fadeOut();
     });
-    $('.cardsHomeSlide').click(function() {
-      $('.cards').animate({
-        left: '-200%'
-      }, 500);
-      $('.home').animate({
-        left: '0'
-      }, 500);
-    });
     $('.listNewCharitySlide').click(function() {
       $('.charity-list').animate({
         left: '200%'
@@ -69,21 +61,6 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
-    });
-    $('.homeFadeIn').click(function(event) {
-      $('.cards').animate({
-        left: '-200%'
-      }, 50);
-      $('.charity-list').animate({
-        left: '200%'
-      }, 50);
-      $('.home').animate({
-        left: '0'
-      }, 50);
-      $('.cart').fadeOut();
-      $('.home').fadeIn();
-      $('.charity-list').fadeIn();
-      $('.cards').fadeIn();
     });
     $('.charity>img').on('click', function() {
       var thisCharity = $(this).parent();
