@@ -32,6 +32,9 @@ import {Card} from './card.model';
         <img src="../build/img/heart.svg">
       </div>
     </div>
+    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
+    <a target="blank" href="https://instagram.com/accounts/logout/">Instagram Logou</a>
+
     <div class="charity-list">
       <charity-list></charity-list>
       <button class="newCharityHomeSlide">Home</button>
@@ -43,11 +46,8 @@ import {Card} from './card.model';
     </div>
     <div class="cart">
     <cart [cart]="cart"></cart>
-
     </div>
   </section>
-
-
     `
 })
 
