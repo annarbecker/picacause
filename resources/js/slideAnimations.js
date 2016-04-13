@@ -20,15 +20,25 @@ $(function() {
       }, 500);
     });
     $('.homeSlide').click(function() {
+      var time;
+      if ($('.home').css('display') === 'none') {
+        time = 50;
+      } else {
+        time = 500;
+      }
       $('.charity-list').animate({
         left: '200%'
-      }, 500);
+      }, time);
       $('.home').animate({
         left: '0'
-      }, 500);
+      }, time);
       $('.cards').animate({
         left: '-200%'
-      }, 500);
+      }, time);
+      $('.home').fadeIn();
+      $('.charity-list').fadeIn();
+      $('.cards').fadeIn();
+      $('.cart').fadeOut();
     });
     $('.cardsHomeSlide').click(function() {
       $('.cards').animate({
@@ -63,13 +73,13 @@ $(function() {
     $('.homeFadeIn').click(function(event) {
       $('.cards').animate({
         left: '-200%'
-      });
+      }, 50);
       $('.charity-list').animate({
         left: '200%'
-      });
+      }, 50);
       $('.home').animate({
         left: '0'
-      });
+      }, 50);
       $('.cart').fadeOut();
       $('.home').fadeIn();
       $('.charity-list').fadeIn();
