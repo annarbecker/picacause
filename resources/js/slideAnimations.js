@@ -2,7 +2,7 @@ $(function() {
   setTimeout(function() {
     var full = false;
     var d = {};
-    var speed = 900;
+    var speed = 500;
     $('.homeNewCharitySlide').click(function() {
       $('.charity-list').animate({
         left: '0'

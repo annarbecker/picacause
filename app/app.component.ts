@@ -39,10 +39,7 @@ import {Card} from './card.model';
     <div class="cards">
       <p>All Cards</p>
       <button class="cardsHomeSlide">Home</button>
-      <h2>API test</h2>
-      <div *ngFor="#currentPic of pics">
-        <img src="{{currentPic.images.standard_resolution.url}}">
-      </div>
+      <pic-list></pic-list>
     </div>
     <div class="cart">
     <cart [cart]="cart"></cart>
