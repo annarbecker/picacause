@@ -17,6 +17,7 @@ import {Http, Response} from 'angular2/http';
 })
 
 export class PicListComponent {
+  public token = 'access_token=3128477430.8c5216d.5551b14da14a40ed9c77579a4d83484e';
   public pics = [];
   public onAddToCart: EventEmitter<any>;
   constructor(private http:Http) {
@@ -24,11 +25,18 @@ export class PicListComponent {
   }
 
   ngOnInit() {
+    console.log(window.location.href);
+    var userToken = window.location.href;
+    if (window.location.href.length > 25) {
+      this.token = userToken.slice(23);
+    }
+    console.log(this.token);
+
     this.getPics();
   }
 
   getPics() {
-    return this.http.get('https://api.instagram.com/v1/tags/charityapp/media/recent?access_token=3128477430.8c5216d.5551b14da14a40ed9c77579a4d83484e').map((res:Response) => res.json()).subscribe(
+    return this.http.get('https://api.instagram.com/v1/users/self/media/recent?' + this.token).map((res:Response) => res.json()).subscribe(
       // the first argument is a function which runs on success
       data => { this.pics = data.data},
       // the second argument is a function which runs on error
