@@ -96,7 +96,7 @@ $(function() {
       var thisPic = $(this).parent();
       console.log($(thisPic)[0]);
       if(!full) {
-        $('.charity').each(function() {
+        $('.picture').each(function() {
           if($(this)[0] !== $(thisPic)[0]){
             $(this).hide();
           }
@@ -108,11 +108,11 @@ $(function() {
         });
         full=true;
       } else {
-        d.width = "300px";
-        d.height = "300px";
+        d.width = "640px";
+        d.height = "640px";
         $(this).parent().css("position","");
         $(this).parent().animate(d, speed, function() {
-          $('.charity').each(function() {
+          $('.picture').each(function() {
             if($(this)[0] !== $(thisPic)[0]) {
               $(this).fadeIn('fast');
             }
