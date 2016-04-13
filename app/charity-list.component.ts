@@ -1,17 +1,19 @@
 import { Component } from 'angular2/core';
 import { Charity } from './charity.model';
 import {NewCharityComponent} from './new-charity.component';
+import {CharityDetailsComponent} from './charity-details.component';
 
 
 @Component({
   selector: 'charity-list',
-  directives: [NewCharityComponent],
+  directives: [NewCharityComponent, CharityDetailsComponent],
   template: `
   <div class="charityList">
     <h4>Charities:</h4>
-    <div *ngFor="#currentCharity of charityList">
-      <img class="charityImage" src="{{currentCharity.image}}">
+    <div *ngFor="#currentCharity of charityList" class="charity">
+      <img class="charityImage" (click)="charityClicked(currentCharity)" src="{{currentCharity.image}}">
       <p>{{currentCharity.name}}</p>
+      <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
     </div>
     <button class="listNewCharitySlide">New Charity</button>
   </div>
@@ -23,7 +25,8 @@ import {NewCharityComponent} from './new-charity.component';
 
 export class CharityListComponent {
   public charityList: Charity[];
-  public myDataRef = new Firebase('https://picacause.firebaseio.com/')
+  public myDataRef = new Firebase('https://picacause.firebaseio.com/');
+  public selectedCharity: Charity;
 
   constructor(){
     this.charityList = [];
@@ -64,5 +67,13 @@ export class CharityListComponent {
       category: charityArray[5],
       hashtag: charityArray[6]
     });
+  }
+  charityClicked(clickedCharity: Charity) {
+    console.log('it works?');
+    if(this.selectedCharity === clickedCharity) {
+      this.selectedCharity = undefined;
+    } else {
+      this.selectedCharity = clickedCharity;
+    }
   }
 }

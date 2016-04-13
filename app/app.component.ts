@@ -23,7 +23,7 @@ import {Card} from './card.model';
     </div>
   </header>
   <section>
-
+    <button class="homeCartShow">Items in cart:{{cartCount}}</button>
     <div class="home">
       <div class="homeNewCharitySlide">
         <img src="../build/img/heart.svg">
@@ -44,33 +44,14 @@ import {Card} from './card.model';
         <img src="{{currentPic.images.standard_resolution.url}}">
       </div>
     </div>
-  </section>
-
-
-  <button class="homeCartShow">Items in cart:{{cartCount}}</button>
-  <div class="home">
-    <p>Site Mission</p>
-    <button class="homeNewCharitySlide">View All Charities</button>
-    <button class="homeCardsSlide">View All Cards</button>
-  </div>
-  <div class="charity-list">
-    <charity-list></charity-list>
-    <button class="newCharityHomeSlide">Home</button>
-  </div>
-  <div class="cards">
-    <p>All Cards</p>
-    <button class="cardsHomeSlide">Home</button>
-    <pic-list
-      [cart]="cart"
-      (onAddToCart)="addToCart($event)">
-    </pic-list>
-  </div>
-  <div class="cart">
+    <div class="cart">
     <cart [cart]="cart"></cart>
     <button class="homeFadeIn">Home</button>
-  </div>
-  <br>
-  <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
+    </div>
+    <br>
+    <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
+  </section>
+
 
     `
 })
