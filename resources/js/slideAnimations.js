@@ -101,5 +101,36 @@ $(function() {
         full = false;
       }
     });
+
+    $('.picture>img').on('click', function() {
+      var thisPic = $(this).parent();
+      console.log($(thisPic)[0]);
+      if(!full) {
+        $('.charity').each(function() {
+          if($(this)[0] !== $(thisPic)[0]){
+            $(this).hide();
+          }
+        });
+        d.height = "80vh";
+        d.width = "80vw";
+        $(this).parent().animate(d, speed, function(){
+
+        });
+        full=true;
+      } else {
+        d.width = "300px";
+        d.height = "300px";
+        $(this).parent().css("position","");
+        $(this).parent().animate(d, speed, function() {
+          $('.charity').each(function() {
+            if($(this)[0] !== $(thisPic)[0]) {
+              $(this).fadeIn('fast');
+            }
+          });
+        });
+        full = false;
+      }
+    });
+
   }, 1000);
 });
