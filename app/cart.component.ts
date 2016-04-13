@@ -11,6 +11,7 @@ import {Card} from './card.model';
     <p>Photographer: {{item.photographer}}</p>
     <p>Price: \${{item.price}}</p>
   </div>
+  <button class="homeFadeIn">Close Cart</button>
   <p>Total: \${{getTotal()}}.00</p>
   `
 })

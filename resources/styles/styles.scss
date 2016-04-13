@@ -52,6 +52,21 @@ header {
     width: 50%;
   }
 }
+.nav-cart-icon {
+  svg {
+
+    border: 1px solid purple;
+    #cart-count {
+      // margin: 0 1rem 0 0;
+    }
+    &:hover {
+      transform: scale(1.2);
+      #cart-svg {
+        fill: tomato;
+      }
+  }
+  }
+}
 section {
   flex: 1;
 }
@@ -61,6 +76,10 @@ footer {
   height: 6rem;
   width: 100%;
 
+}
+.home-icon {
+  height: 10rem;
+  width: auto;
 }
 
 .charity-list {
@@ -92,9 +111,43 @@ footer {
   background-color: salmon;
   height: 100vh;
   // padding: 20% 0;
-  flex: 1 1 50%
+  flex: 1 1 50%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background-color: darken(salmon, 10%);
+    .home-icon {
+      transform: scale(2);
+    }
+    .home-icon-title {
+      opacity: 1;
+    }
+  }
+}
+.home-icon-title {
+  opacity: 0;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.home-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  transition: all 0.3s ease-in-out;
+  img {
+    height: 100%;
+  }
 }
 
+.home-cart-icon {
+  height: 1rem;
+  border: 1px solid purple;
+  img {
+    height: 1rem;
+  }
+}
 .homeCardsSlide {
   display: flex;
   flex-direction: column;
@@ -103,7 +156,18 @@ footer {
   background-color: turquoise;
   height: 100vh;
   // width: 50%;
-  flex: 1 1 50%
+  flex: 1 1 50%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background-color: darken(turquoise, 10%);
+    .home-icon {
+      transform: scale(2);
+    }
+    .home-icon-title {
+      opacity: 1;
+    }
+  }
 }
 .home {
   display: flex;
