@@ -9,6 +9,7 @@ import {Card} from './card.model';
   <div *ngFor="#item of cart">
     <p>{{item.photographer}}</p>
   </div>
+  <button class="homeFadeIn">Home</button>
   `
 })
 

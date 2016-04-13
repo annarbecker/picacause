@@ -22,9 +22,8 @@ import {Card} from './card.model';
       </ul>
     </div>
   </header>
-
-
   <section>
+    <button class="homeCartShow">Items in cart:{{cartCount}}</button>
     <div class="home">
       <div class="homeNewCharitySlide">
         <img src="../build/img/heart.svg">
@@ -43,39 +42,12 @@ import {Card} from './card.model';
     <div class="cards">
       <p>All Cards</p>
       <button class="cardsHomeSlide">Home</button>
-      <h2>API test</h2>
-      <div *ngFor="#currentPic of pics">
-        <img src="{{currentPic.images.standard_resolution.url}}">
-      </div>
+      <pic-list></pic-list>
+    </div>
+    <div class="cart">
+    <cart [cart]="cart"></cart>
     </div>
   </section>
-
-  <button class="homeCartShow">Items in cart:{{cartCount}}</button>
-  <div class="home">
-
-    <p>Site Mission</p>
-    <button class="homeNewCharitySlide">View All Charities</button>
-    <button class="homeCardsSlide">View All Cards</button>
-  </div>
-  <div class="charity-list">
-    <charity-list></charity-list>
-    <button class="newCharityHomeSlide">Home</button>
-  </div>
-  <div class="cards">
-    <p>All Cards</p>
-    <button class="cardsHomeSlide">Home</button>
-    <pic-list
-      [cart]="cart"
-      (onAddToCart)="addToCart($event)">
-    </pic-list>
-  </div>
-  <div class="cart">
-    <cart [cart]="cart"></cart>
-    <button class="homeFadeIn">Home</button>
-  </div>
-  <br>
-  <sign-up (onSubmitNewUser)=createUser($event)></sign-up>
-
     `
 })
 

@@ -2,10 +2,9 @@
 @import 'buttons';
 
 * {
-  border: 1px solid blue;
   margin: 0;
   padding: 0;
-  // border: 0;
+  border: 0;
   list-style: none;
   text-decoration: none;
   font-family: 'Work Sans', sans-serif;
@@ -135,4 +134,16 @@ footer {
   width: 80%;
   height: auto;
   margin: auto;
+}
+
+.charity {
+  border: 1px solid blue;
+  width: 300px;
+  height: auto;
+  margin: 0;
+}
+
+.charityImage {
+  max-width: 300px;
+  height: auto;
 }
