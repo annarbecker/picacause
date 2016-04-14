@@ -8,7 +8,9 @@ import {NewCharityComponent} from './new-charity.component';
   directives: [NewCharityComponent],
   template: `
     <div class="login">
-      <h4>Login:</h4>
+      <h3>Apply to be Added to our List of Charities</h3>
+      <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
+      <h4>Admin Login</h4>
       <input placeholder="username" #adminUsername>
       <input placeholder="password" type="password" #adminPassword>
       <button (click)="loginAdmin(adminUsername, adminPassword)">Go!</button>
@@ -20,12 +22,20 @@ import {NewCharityComponent} from './new-charity.component';
       <p>Password was incorrect</p>
     </div>
     <div class="adminPage">
-      <h4>It works</h4>
-      <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
+    <h3>Welcome {{currentAdmin}}</h3>
+      <br>
+      <h4>Charity Applications:</h4>
+      <div *ngFor="#currentCharityRequest of charityRequestList">
+        {{currentCharityRequest.name}}
+      </div>
+      <br>
+      <br>
       <h4>Sign up new admin</h4>
       <input placeholder="username" #newAdminUsername>
       <input placeholder="password" type="password" #newAdminPassword>
       <button (click)="createAdmin(newAdminUsername, newAdminPassword)">Go!</button>
+      <br>
+      <br>
       <button (click)="logout()">Logout</button>
     </div>
   `
@@ -33,11 +43,33 @@ import {NewCharityComponent} from './new-charity.component';
 
 export class AdminLoginComponent {
   public myDataRef = new Firebase('https://picacause.firebaseio.com/');
-  public adminList = [];
+  public charityRequestList = [];
   public onSubmitNewCharity: EventEmitter<any>;
+  public currentAdmin: string;
 
   constructor() {
     this.onSubmitNewCharity = new EventEmitter();
+  }
+
+  ngOnInit() {
+    var adminClass = this;
+
+    //this event emitter fires once on page load and every time firebase is updated
+    adminClass.myDataRef.on("value", function(snapshot) {
+      //clear charityList array
+      adminClass.charityRequestList = [];
+      //save results to array
+      var charityRequests = snapshot.val().charityRequests;
+      for(var key in charityRequests) {
+        //Skip loop if property is from prototype
+        if(!charityRequests.hasOwnProperty(key)) continue;
+        //save and push each object in charities to charityList
+        var obj = charityRequests[key];
+        adminClass.charityRequestList.push(obj);
+      }
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
   }
 
   loginAdmin(username: HTMLInputElement, password: HTMLInputElement) {
@@ -47,8 +79,11 @@ export class AdminLoginComponent {
     adminsRef.orderByChild('username').equalTo(username.value).on('child_added', function(snapshot) {
       userFound = true;
       if(snapshot.val().password === password.value) {
+        adminClass.currentAdmin = snapshot.val().username;
         $('.login').fadeOut(100, function() {
           $('.adminPage').fadeIn(100);
+          username.value = "";
+          password.value = "";
         });
         $('.loginFailed').hide();
         $('.userNotFound').hide();
@@ -77,6 +112,7 @@ export class AdminLoginComponent {
   }
 
   logout() {
+    this.currentAdmin = "";
     $('.adminPage').fadeOut(100, function() {
       $('.login').fadeIn(100);
     });

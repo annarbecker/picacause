@@ -5,7 +5,6 @@ import { Charity } from './charity.model';
   selector: 'new-charity',
   outputs: ['onSubmitNewCharity'],
   template:`
-    <p>Add New Charity</p>
     <input placeholder="Name" #newName><br>
     <input placeholder="Mission Statement" #newMission><br>
     <input placeholder="Image" #newImage><br>
@@ -18,7 +17,7 @@ import { Charity } from './charity.model';
       <option value="enviornment">Environment</option>
     </select><br>
     <input placeholder="Desired photo hashtags" #newHashtag><br>
-    <button class="newCharityListSlide" (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCategory, newHashtag)">Add</button>
+    <button class="newCharityListSlide" (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCategory, newHashtag)">Apply</button>
   `
 })
 

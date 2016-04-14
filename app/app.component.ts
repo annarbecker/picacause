@@ -61,7 +61,7 @@ import {AdminLoginComponent} from './admin-login.component';
       <cart [cart]="cart" (onCheckout)="clearCart($event)"></cart>
     </div>
     <div class="apply">
-      <admin-login (onSubmitNewCharity)="createCharity($event)"></admin-login>
+      <admin-login (onSubmitNewCharity)="createCharityApplication($event)"></admin-login>
     </div>
   </section>
     `
@@ -97,8 +97,8 @@ export class AppComponent {
     this.cart = [];
   }
 
-  createCharity(charityArray: Array<any>): void {
-    var charitiesRef = this.myDataRef.child("charities");
+  createCharityApplication(charityArray: Array<any>): void {
+    var charitiesRef = this.myDataRef.child("charityRequests");
     charitiesRef.push({
       name: charityArray[0],
       mission: charityArray[1],
