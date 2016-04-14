@@ -39,6 +39,7 @@ export class CharityListComponent {
       charityListClass.charityList = [];
       //save results to array
       var charities = snapshot.val().charities;
+      console.log(snapshot.val().charities);
       for(var key in charities) {
         //Skip loop if property is from prototype
         if(!charities.hasOwnProperty(key)) continue;
@@ -48,6 +49,11 @@ export class CharityListComponent {
       }
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
+    });
+
+    //this code will return charity ids based on name, needs to be moved to cards component, or cart component or something
+    this.myDataRef.child('charities').orderByChild('name').equalTo('Outside In').on('child_added', function(snapshot) {
+      console.log(snapshot.key());
     });
   }
   createCharity(charityArray: Array<any>): void {
@@ -64,6 +70,9 @@ export class CharityListComponent {
       secured: 0,
       category: charityArray[5],
       hashtag: charityArray[6]
+    });
+    charitiesRef.orderByChild('name').equalTo('Outside In').on('child_added', function(snapshot) {
+      console.log(snapshot.key());
     });
   }
   charityClicked(clickedCharity: Charity) {
