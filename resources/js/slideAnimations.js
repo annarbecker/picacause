@@ -129,6 +129,7 @@ $(function() {
       $('.returnToCards').on('click', function() {
           d.width = "300px";
           d.height = "300px";
+          $('.picture').css("height", "auto");
           $(this).parent().css("position","");
           $(this).parent().animate(d, speed, function() {
             $('.picture').each(function() {

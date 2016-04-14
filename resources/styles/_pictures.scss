@@ -6,15 +6,11 @@
 .picture {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
   height: auto;
   margin: 1rem;
   flex: 1 1 calc(32% - 1rem);
   height: 300px;
   width: 300px;
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .picImage {
@@ -22,4 +18,32 @@
   max-width: 700px;
   height: auto;
   margin: 0 auto;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.picGuts {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid lighten(salmon, 10%);
+  border-radius: 5px;
+  background-color: lighten(salmon, 10%);
+  select {
+    margin-top: 10px;
+    height: 30px;
+  }
+}
+
+.returnToCards {
+  font-size: 1.5rem;
+  margin-left: 1%;
+  margin-top: 1rem;
+}
+
+.selectHeader {
+  margin-top: 15px;
+  color: white;
+  font-size: 2rem;
 }

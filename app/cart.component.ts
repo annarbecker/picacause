@@ -9,14 +9,19 @@ import {Card} from './card.model';
   inputs: ['cart'],
   outputs: ['onCheckout'],
   template: `
-  <div *ngFor="#item of cart" class="shoppingCart">
-    <img src="{{item.image}}">
-    <p>Photographer: {{item.photographer}}</p>
-    <p>Price: \${{item.price}}</p>
-  </div>
-  <button (click)="checkout()" class="homeSlide">Checkout</button>
-  <button class="homeSlide">Close Cart</button>
-  <p>Total: \${{getTotal()}}.00</p>
+  <div class="container">
+    <div *ngFor="#item of cart" class="shoppingCart">
+      <img src="{{item.image}}">
+      <p><strong>Supported Charity:</strong> {{item.charities}}</p>
+      <p><strong>Photographer:</strong> {{item.photographer}}</p>
+      <p><strong>Price:</strong> \${{item.price}}.00</p>
+    </div>
+    <p><strong>Total: \${{getTotal()}}.00</strong></p>
+    <div class="checkoutBtns">
+      <button (click)="checkout()" class="homeSlide">Checkout</button>
+      <button class="homeSlide">Close Cart</button>
+    </div>
+</div>
   `
 })
 

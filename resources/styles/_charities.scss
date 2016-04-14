@@ -2,22 +2,27 @@
 .charityContainer {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .charity {
   display: flex;
-  flex-direction: column;
-  height: auto;
+  height: 300px;
   margin: 1rem;
   flex: 1 1 calc(32% - 1rem);
+}
+
+.charityImage {
+  width: 300px;
+  height: 300px;
+  margin: 1rem;
   &:hover {
     cursor: pointer;
   }
 }
 
-.charityImage {
-  width: 300px;
-  height: auto;
+charity-list {
+  margin-top: 5rem;
 }
 
 .secured-bar {
