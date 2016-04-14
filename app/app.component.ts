@@ -19,17 +19,19 @@ import {AdminLoginComponent} from './admin-login.component';
   <header>
     <div class="container header">
       <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
-      <ul class="navvy">
-        <li><a class="homeSlide" href="#">home</a></li>
-        <li><a data-toggle="modal" data-target="#myModal">about</a></li>
-        <li><a href="#">contact</a></li>
-        <li><a class="adminFade" href="#">apply</a></li>
-      </ul>
-      <a href="#" class="homeCartShow nav-cart-icon">
-      <svg-cart class=svgCart></svg-cart>
-      <p id="cart-count">{{cartCount}}</p>
-      <p id="open-cart-hover">open cart</p>
-      </a>
+      <div class="navvy">
+        <ul>
+          <li><a class="homeSlide" href="#">home</a></li>
+          <li><a data-toggle="modal" data-target="#myModal">about</a></li>
+          <li><a href="#">contact</a></li>
+          <li><a class="adminFade" href="#">apply</a></li>
+        </ul>
+        <a href="#" class="homeCartShow nav-cart-icon">
+          <svg-cart class=svgCart></svg-cart>
+          <p id="cart-count">{{cartCount}}</p>
+          <p id="open-cart-hover">open cart</p>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -48,29 +50,17 @@ import {AdminLoginComponent} from './admin-login.component';
       <div class="modal-body">
         <div class="mission row">
           <h4>Getting Involved</h4>
-          <p>Support your charity by hashtaging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
+          <p>Support your charity by hashtagging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
         </div>
         <div class="mission row">
           <h4>Navigating the App</h4>
           <div class="col col-left col-xs-6">
-            <div class="instructions row">
-              <div class="col col-xs-9">
-                <p>Do you want to find a print? Click here:</p>
-              </div>
-              <div class="col col-xs-2">
-                <svg-camera class=svgCamera></svg-camera>
-              </div>
-            </div>
+            <svg-camera class=svgCamera></svg-camera>
+            <p>Buy a print</p>
           </div>
           <div class="col col-right col-xs-6">
-            <div class="instructions row">
-              <div class="col col-xs-9">
-                <p>Or are you looking for a charity? Click here:</p>
-              </div>
-              <div class="col col-xs-2">
-                <svg-heart class=svgHeart></svg-heart>
-              </div>
-            </div>
+            <svg-heart class=svgHeart></svg-heart>
+            <p>Support a charity</p>
           </div>
         </div>
       </div>
@@ -80,13 +70,13 @@ import {AdminLoginComponent} from './admin-login.component';
 </div>
   <section>
     <div class="home">
-      <div class="homeCardsSlide pointer">
+      <div class="homeCardsSlide">
         <div class="home-icon">
           <svg-camera class=svgCamera></svg-camera>
           <h4 class="home-icon-title">go to photos</h4>
         </div>
       </div>
-      <div class="homeNewCharitySlide pointer">
+      <div class="homeNewCharitySlide">
       <div class="home-icon">
         <svg-heart class=svgHeart></svg-heart>
         <h4 class="home-icon-title">go to charities</h4>
