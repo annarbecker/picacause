@@ -26,7 +26,7 @@ import {NewCharityComponent} from './new-charity.component';
       <br>
       <h4>Charity Applications:</h4>
       <div *ngFor="#currentCharityRequest of charityRequestList">
-        <p (click)="selectCharityRequest(currentCharity)" class="charityRequest">{{currentCharityRequest.name}} <span class="approve" (click)="approveCharityRequest(currentCharityRequest)">&#x02713;</span>  <span class="reject" (click)="rejectCharityRequest">&#x02717;</span></p>
+        <p (click)="selectCharityRequest(currentCharity)" class="charityRequest">{{currentCharityRequest.name}} <span class="approve" (click)="approveCharityRequest(currentCharityRequest)">&#x02713;</span>  <span class="reject" (click)="rejectCharityRequest(currentCharityRequest)">&#x02717;</span></p>
         <div *ngIf="currentCharityRequest === selectedCharityRequest">
 
         </div>
@@ -122,7 +122,6 @@ export class AdminLoginComponent {
   }
 
   approveCharityRequest(charityRequest) {
-    console.log(charityRequest);
     var charityRef = this.myDataRef.child('charities');
     var charityRequestRef = this.myDataRef.child('charityRequests');
     var charityRequestKey;
@@ -143,6 +142,11 @@ export class AdminLoginComponent {
   }
 
   rejectCharityRequest(charityRequest) {
-
+    var charityRequestRef = this.myDataRef.child('charityRequests');
+    var charityRequestKey;
+    charityRequestRef.orderByChild('name').equalTo(charityRequest.name).on('child_added', function(snapshot) {
+      charityRequestKey = snapshot.key();
+    });
+    charityRequestRef.child(charityRequestKey).remove();
   }
 }
