@@ -10,24 +10,23 @@ import { Charity } from './charity.model';
   <div class="charityGuts">
     <p class="charityHeader">Mission</p>
     <p>{{charity.mission}}<a href="{{charity.hashtag}}" target="blank"> Learn More</a></p>
-
     <p class="charityHeader">Contact</p>
     <p>{{charity.contact}}<p>
     <p class="charityHeader">Category</p>
     <p>{{charity.category}}<p>
-
-
     <p class="charityHeader">Amount Raised</p>
-    <p class="charityHeader">Goal</p>
-    <p>\${{charity.goal}}.00<p>
+    <p>\${{charity.secured}}.00</p>
+    <p class="charityHeader">goal</p>
+    <p> \${{charity.goal}}.00</p>
     <div class="secured-metrics">
       <div class="amount-secured">
       </div>
       <div class="amount-desired">
       </div>
     </div>
-
-    <button>Support {{charity.name}}</button>
+    <div class="checkoutBtns">
+      <button class="viewCards">support {{charity.name}}</button>
+    </div>
   </div>
   `
 })

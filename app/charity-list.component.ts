@@ -11,7 +11,10 @@ import {CharityDetailsComponent} from './charity-details.component';
     <div class="charityContainer container">
       <div *ngFor="#currentCharity of charityList" class="charity">
         <img class="charityImage" (click)="charityClicked(currentCharity)" src="{{currentCharity.image}}">
-        <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
+        <div *ngIf="currentCharity === selectedCharity">
+          <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
+          <button (click)="charityListClicked(currentCharity)" class="viewCharities">return to all charities</button>
+        </div>
       </div>
     </div>
   `
@@ -48,6 +51,14 @@ export class CharityListComponent {
   }
 
   charityClicked(clickedCharity: Charity) {
+    if(this.selectedCharity === clickedCharity) {
+      this.selectedCharity = undefined;
+    } else {
+      this.selectedCharity = clickedCharity;
+    }
+  }
+
+  charityListClicked(clickedCharity: Charity) {
     if(this.selectedCharity === clickedCharity) {
       this.selectedCharity = undefined;
     } else {
