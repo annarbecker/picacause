@@ -56,7 +56,7 @@ import {Card} from './card.model';
       </pic-list>
     </div>
     <div class="cart">
-    <cart [cart]="cart"></cart>
+      <cart [cart]="cart" (onCheckout)="clearCart($event)"></cart>
     </div>
   </section>
     `
@@ -85,5 +85,9 @@ export class AppComponent {
       username: userArray[0],
       password: userArray[1]
     });
+  }
+  clearCart(number) {
+    this.cartCount = 0;
+    this.cart = [];
   }
 }
