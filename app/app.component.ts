@@ -19,17 +19,19 @@ import {AdminLoginComponent} from './admin-login.component';
   <header>
     <div class="container header">
       <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
-      <ul class="navvy">
-        <li><a class="homeSlide" href="#">home</a></li>
-        <li><a data-toggle="modal" data-target="#myModal">about</a></li>
-        <li><a href="#">contact</a></li>
-        <li><a class="adminFade" href="#">apply</a></li>
-      </ul>
-      <a href="#" class="homeCartShow nav-cart-icon">
-      <svg-cart class=svgCart></svg-cart>
-      <p id="cart-count">{{cartCount}}</p>
-      <p id="open-cart-hover">open cart</p>
-      </a>
+      <div class="navvy">
+        <ul>
+          <li><a class="homeSlide" href="#">home</a></li>
+          <li><a data-toggle="modal" data-target="#myModal">about</a></li>
+          <li><a href="#">contact</a></li>
+          <li><a class="adminFade" href="#">apply</a></li>
+        </ul>
+        <a href="#" class="homeCartShow nav-cart-icon">
+          <svg-cart class=svgCart></svg-cart>
+          <p id="cart-count">{{cartCount}}</p>
+          <p id="open-cart-hover">open cart</p>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -68,13 +70,13 @@ import {AdminLoginComponent} from './admin-login.component';
 </div>
   <section>
     <div class="home">
-      <div class="homeCardsSlide pointer">
+      <div class="homeCardsSlide">
         <div class="home-icon">
           <svg-camera class=svgCamera></svg-camera>
           <h4 class="home-icon-title">go to photos</h4>
         </div>
       </div>
-      <div class="homeNewCharitySlide pointer">
+      <div class="homeNewCharitySlide">
       <div class="home-icon">
         <svg-heart class=svgHeart></svg-heart>
         <h4 class="home-icon-title">go to charities</h4>
