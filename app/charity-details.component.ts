@@ -12,6 +12,8 @@ import { Charity } from './charity.model';
     <p>{{charity.contact}}<p>
     <p class="charityHeader">Category</p>
     <p>{{charity.category}}<p>
+    <p class="charityHeader">Goal</p>
+    <p>\${{charity.goal}}.00<p>
     <a class="charityHeader" href="{{charity.hashtag}}" target="blank">Learn More</a>
     <button>Support {{charity.name}}</button>
   </div>
