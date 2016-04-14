@@ -147,6 +147,37 @@ footer {
   margin: auto;
 }
 
+.charityRequest {
+  font-size: 20px;
+}
+
+.approve {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #595959;
+  padding: 3px 6px;
+  color: green;
+  margin-left: 40px;
+}
+
+.approve:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+.reject {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #595959;
+  padding: 3px 9px;
+  color: red;
+}
+
+.reject:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
 //•••••• CHARITY •••••••
 
 .charityList {

@@ -150,7 +150,7 @@ export class AppComponent {
       name: charityArray[0],
       mission: charityArray[1],
       image: charityArray[2],
-      concat: charityArray[3],
+      contact: charityArray[3],
       goal: charityArray[4],
       secured: 0,
       category: charityArray[5],
