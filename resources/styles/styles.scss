@@ -1,5 +1,6 @@
 // @import resources/styles/_buttons;
 @import 'buttons';
+@import 'header';
 
 * {
   margin: 0;
@@ -36,37 +37,7 @@ my-app {
 body {
   overflow-x: hidden;
 }
-header {
-  background-color: lightgray;
-  width: 100%;
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 6rem;
-  // width: 40%;
-  ul {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-  }
-}
-.nav-cart-icon {
-  svg {
 
-    border: 1px solid purple;
-    #cart-count {
-      // margin: 0 1rem 0 0;
-    }
-    &:hover {
-      transform: scale(1.2);
-      #cart-svg {
-        fill: tomato;
-      }
-  }
-  }
-}
 section {
   flex: 1;
 }
@@ -115,10 +86,8 @@ footer {
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
-    background-color: darken(salmon, 10%);
-    .home-icon {
-      transform: scale(2);
-    }
+    height: calc(100vh + 1rem);
+    transform: translate(0, -1rem);
     .home-icon-title {
       opacity: 1;
     }
@@ -160,10 +129,8 @@ footer {
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
-    background-color: darken(turquoise, 10%);
-    .home-icon {
-      transform: scale(2);
-    }
+    height: calc(100vh + 1rem);
+    transform: translate(0, -1rem);
     .home-icon-title {
       opacity: 1;
     }
