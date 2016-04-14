@@ -8,10 +8,10 @@ import {CharityDetailsComponent} from './charity-details.component';
   selector: 'charity-list',
   directives: [NewCharityComponent, CharityDetailsComponent],
   template: `
-    <h4>Charities:</h4>
+  <p>Charities</p>
+  <div class="charityContainer container">
     <div *ngFor="#currentCharity of charityList" class="charity">
       <img class="charityImage" (click)="charityClicked(currentCharity)" src="{{currentCharity.image}}">
-      <p>{{currentCharity.name}}</p>
       <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
     </div>
   `

@@ -12,10 +12,13 @@ import {PicDetailsComponent} from './pic-details.component'
   <h2>API test</h2>
   <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
   <a target="blank" href="https://instagram.com/accounts/logout/">Instagram Logout</a>
-  <div class="picList">
+  <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
-      <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)">
-      <pic-details [pic]="currentPic" *ngIf="currentPic === selectedPic" (onAddToCart)="addToCart($event)"></pic-details>
+      <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
+      <div *ngIf="currentPic === selectedPic">
+        <a  (click)="linkClicked(currentPic)" class="returnToCards">Return to all cards</a>
+        <pic-details [pic]="currentPic" (onAddToCart)="addToCart($event)"></pic-details>
+      </div>
     </div>
   </div>
   `
@@ -52,10 +55,15 @@ export class PicListComponent {
     );
   }
 
-
-
   picClicked(clickedPic: Card) {
-    console.log('click pic works!');
+    if(this.selectedPic === clickedPic) {
+      this.selectedPic = undefined;
+    } else {
+      this.selectedPic = clickedPic;
+    }
+  }
+
+  linkClicked(clickedPic: Card) {
     if(this.selectedPic === clickedPic) {
       this.selectedPic = undefined;
     } else {

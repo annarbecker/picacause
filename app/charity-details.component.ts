@@ -5,10 +5,10 @@ import { Charity } from './charity.model';
   selector: 'charity-details',
   inputs: ['charity'],
   template: `
-  <p>{{charity.mission}}</p>
-  <p>{{charity.contact}}<p>
-  <p>{{charity.category}}<p>
-  <button>Add to Cart</button>
+  <p>Mission: {{charity.mission}}</p>
+  <p>Contact: {{charity.contact}}<p>
+  <p>Category: {{charity.category}}<p>
+  <a href="{{charity.hashtag}}" target="blank">Learn More</a>
   `
 })
 
