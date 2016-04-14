@@ -1,7 +1,10 @@
 // @import resources/styles/_buttons;
 @import 'buttons';
 @import 'header';
+@import 'charities';
+@import 'pictures';
 @import 'variables';
+
 
 * {
   margin: 0;
@@ -52,14 +55,6 @@ footer {
   width: 100%;
 
 }
-<<<<<<< HEAD
-=======
-// .home-icon {
-//   height: 10rem;
-//   width: auto;
-//   border: 1px solid purple;
-// }
->>>>>>> a1087b112c46fd7dab5e3c03e110d7122bcd42b3
 
 .charity-list {
   position: absolute;
@@ -160,7 +155,6 @@ footer {
   margin: auto;
 }
 
-
 //•••••• CHARITY •••••••
 
 .charityList {
@@ -172,6 +166,7 @@ footer {
   height: auto;
   margin: auto;
 }
+
 .newCharity {
   position: relative;
   left: 4000px;
@@ -182,17 +177,7 @@ footer {
   margin: auto;
 }
 
-.charity {
-  border: 1px solid blue;
-  width: 300px;
-  height: auto;
-  margin: 0;
-}
 
-.charityImage {
-  max-width: 300px;
-  height: auto;
-}
 
 //•••••• HOME PAGE •••••••
 
@@ -233,12 +218,6 @@ footer {
   // flex-wrap: wrap;
 }
 
-.picture {
-  border: 1px solid blue;
-  width: 640px;
-  height: auto;
-  margin: 1rem;
-}
 
 //•••••• MODAL •••••••
 
