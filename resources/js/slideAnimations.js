@@ -39,6 +39,7 @@ $(function() {
       $('.charity-list').fadeIn();
       $('.cards').fadeIn();
       $('.cart').fadeOut();
+      $('.apply').fadeOut();
     });
     $('.listNewCharitySlide').click(function() {
       $('.charity-list').animate({
@@ -58,6 +59,12 @@ $(function() {
     });
     $('.homeCartShow').click(function() {
       $('.cart').fadeIn(500);
+      $('.home').fadeOut();
+      $('.charity-list').fadeOut();
+      $('.cards').fadeOut();
+    });
+    $('.adminFade').click(function() {
+      $('.apply').fadeIn(500);
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();

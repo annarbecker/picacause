@@ -9,19 +9,21 @@ import {svgHeartComponent} from './svg-heart.component';
 import {svgCameraComponent} from './svg-camera.component';
 import {CartComponent} from './cart.component';
 import {Card} from './card.model';
+import {AdminLoginComponent} from './admin-login.component';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent],
+  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent],
   template: `
 
   <header>
     <div class="container header">
       <p class="logo homeSlide">pica<span>cause</span></p>
-      <ul class="nav">
+      <ul class="navvy">
         <li><a class="homeSlide" href="#">home</a></li>
         <li><a data-toggle="modal" data-target="#myModal">about</a></li>
         <li><a href="#">contact</a></li>
+        <li><a class="adminFade" href="#">apply</a></li>
       </ul>
       <a href="#" class="homeCartShow nav-cart-icon">
       <svg-cart class=svgCart></svg-cart>
@@ -90,6 +92,9 @@ import {Card} from './card.model';
     <div class="cart">
       <cart [cart]="cart" (onCheckout)="clearCart($event)"></cart>
     </div>
+    <div class="apply">
+      <admin-login (onSubmitNewCharity)="createCharityApplication($event)"></admin-login>
+    </div>
   </section>
     `
 })
@@ -118,8 +123,23 @@ export class AppComponent {
       password: userArray[1]
     });
   }
+
   clearCart(number) {
     this.cartCount = 0;
     this.cart = [];
+  }
+
+  createCharityApplication(charityArray: Array<any>): void {
+    var charitiesRef = this.myDataRef.child("charityRequests");
+    charitiesRef.push({
+      name: charityArray[0],
+      mission: charityArray[1],
+      image: charityArray[2],
+      concat: charityArray[3],
+      goal: charityArray[4],
+      secured: 0,
+      category: charityArray[5],
+      hashtag: charityArray[6]
+    });
   }
 }

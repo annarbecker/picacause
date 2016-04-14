@@ -1,6 +1,7 @@
 // @import resources/styles/_buttons;
 @import 'buttons';
 @import 'header';
+@import 'variables';
 
 * {
   margin: 0;
@@ -17,6 +18,9 @@ a {
     color: tomato;
     text-decoration: none;
   }
+}
+.container {
+  border: 1px solid blue;
 }
 body, html {
 
@@ -48,6 +52,14 @@ footer {
   width: 100%;
 
 }
+<<<<<<< HEAD
+=======
+// .home-icon {
+//   height: 10rem;
+//   width: auto;
+//   border: 1px solid purple;
+// }
+>>>>>>> a1087b112c46fd7dab5e3c03e110d7122bcd42b3
 
 .charity-list {
   position: absolute;
@@ -79,7 +91,7 @@ footer {
   height: 100vh;
   // padding: 20% 0;
   flex: 1 1 50%;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
   &:hover {
     cursor: pointer;
     height: calc(100vh + 1rem);
@@ -92,7 +104,7 @@ footer {
 .home-icon-title {
   opacity: 0;
   color: white;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
 }
 .home-icon {
   display: flex;
@@ -100,7 +112,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 6rem;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
   svg {
     height: 6rem;
     path {
@@ -126,7 +138,7 @@ footer {
   height: 100vh;
   // width: 50%;
   flex: 1 1 50%;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
   &:hover {
     cursor: pointer;
     height: calc(100vh + 1rem);
@@ -200,6 +212,20 @@ footer {
 }
 
 //•••••• PICTURES •••••••
+
+.apply {
+  margin-left: 10%;
+  display: none;
+  .adminPage {
+    display: none;
+  }
+  .loginFailed {
+    display: none;
+  }
+  .userNotFound {
+    display: none;
+  }
+}
 
 .picList {
   // display: flex;
