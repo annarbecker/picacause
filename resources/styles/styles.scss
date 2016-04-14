@@ -52,11 +52,14 @@ footer {
   width: 100%;
 
 }
+<<<<<<< HEAD
+=======
 // .home-icon {
 //   height: 10rem;
 //   width: auto;
 //   border: 1px solid purple;
 // }
+>>>>>>> a1087b112c46fd7dab5e3c03e110d7122bcd42b3
 
 .charity-list {
   position: absolute;
@@ -110,8 +113,11 @@ footer {
   align-items: center;
   height: 6rem;
   transition: $transition-quick;
-  img {
-    height: 100%;
+  svg {
+    height: 6rem;
+    path {
+      fill: #FFFFFF;
+    }
   }
 }
 
@@ -122,6 +128,7 @@ footer {
     height: 1rem;
   }
 }
+
 .homeCardsSlide {
   display: flex;
   flex-direction: column;
@@ -141,6 +148,7 @@ footer {
     }
   }
 }
+
 .home {
   display: flex;
   position: absolute;
@@ -151,6 +159,9 @@ footer {
   height: auto;
   margin: auto;
 }
+
+
+//•••••• CHARITY •••••••
 
 .charityList {
   // position: relative;
@@ -183,9 +194,24 @@ footer {
   height: auto;
 }
 
+//•••••• HOME PAGE •••••••
+
 .cart {
   display: none;
 }
+
+.shoppingCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+  }
+}
+
+//•••••• PICTURES •••••••
 
 .apply {
   margin-left: 10%;
@@ -214,13 +240,12 @@ footer {
   margin: 1rem;
 }
 
-.shoppingCart {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  img {
-    height: 100px;
-    width: 100px;
-    margin: 3px;
+//•••••• MODAL •••••••
+
+#welcome {
+  text-align: center;
+  h4 {
+    font-weight: bold;
+    font-size: 3rem;
   }
 }
