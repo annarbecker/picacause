@@ -5,10 +5,16 @@ import { Charity } from './charity.model';
   selector: 'charity-details',
   inputs: ['charity'],
   template: `
-  <p>Mission: {{charity.mission}}</p>
-  <p>Contact: {{charity.contact}}<p>
-  <p>Category: {{charity.category}}<p>
-  <a href="{{charity.hashtag}}" target="blank">Learn More</a>
+  <div class="charityGuts">
+    <p class="charityHeader">Mission</p>
+    <p>{{charity.mission}}</p>
+    <p class="charityHeader">Contact</p>
+    <p>{{charity.contact}}<p>
+    <p class="charityHeader">Category</p>
+    <p>{{charity.category}}<p>
+    <a class="charityHeader" href="{{charity.hashtag}}" target="blank">Learn More</a>
+    <button>Support {{charity.name}}</button>
+  </div>
   `
 })
 

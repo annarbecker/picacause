@@ -4,6 +4,7 @@
 @import 'charities';
 @import 'pictures';
 @import 'variables';
+@import 'charityDetail';
 
 
 * {
@@ -23,7 +24,7 @@ a {
   }
 }
 .container {
-  border: 1px solid blue;
+  // border: 1px solid blue;
 }
 body, html {
 
@@ -210,12 +211,6 @@ footer {
   .userNotFound {
     display: none;
   }
-}
-
-.picList {
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
 }
 
 
