@@ -1,6 +1,7 @@
 // @import resources/styles/_buttons;
 @import 'buttons';
 @import 'header';
+@import 'charities';
 
 * {
   margin: 0;
@@ -147,15 +148,6 @@ footer {
   margin: auto;
 }
 
-.charityList {
-  // position: relative;
-  left: 0;
-  right: 0;
-  top: 100;
-  width: 80%;
-  height: auto;
-  margin: auto;
-}
 .newCharity {
   position: relative;
   left: 4000px;
@@ -164,18 +156,6 @@ footer {
   width: 80%;
   height: auto;
   margin: auto;
-}
-
-.charity {
-  border: 1px solid blue;
-  width: 300px;
-  height: auto;
-  margin: 0;
-}
-
-.charityImage {
-  max-width: 300px;
-  height: auto;
 }
 
 .cart {

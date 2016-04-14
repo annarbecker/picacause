@@ -8,12 +8,13 @@ import {CharityDetailsComponent} from './charity-details.component';
   selector: 'charity-list',
   directives: [NewCharityComponent, CharityDetailsComponent],
   template: `
-    <h4>Charities:</h4>
+  <p>Charities</p>
+  <div class="charityContainer container">
     <div *ngFor="#currentCharity of charityList" class="charity">
       <img class="charityImage" (click)="charityClicked(currentCharity)" src="{{currentCharity.image}}">
-      <p>{{currentCharity.name}}</p>
       <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
     </div>
+  </div>
     <button class="listNewCharitySlide">New Charity</button>
   <div class="newCharity">
     <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
@@ -59,7 +60,7 @@ export class CharityListComponent {
       name: charityArray[0],
       mission: charityArray[1],
       image: charityArray[2],
-      concat: charityArray[3],
+      contact: charityArray[3],
       goal: charityArray[4],
       secured: 0,
       category: charityArray[5],

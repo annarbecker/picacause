@@ -1,0 +1,20 @@
+.charityContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.charity {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 1rem;
+  flex: 1 1 calc(32% - 1rem);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.charityImage {
+  width: 300px;
+  height: auto;
+}

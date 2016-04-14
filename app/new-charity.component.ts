@@ -9,13 +9,13 @@ import { Charity } from './charity.model';
     <input placeholder="Name" #newName>
     <input placeholder="Mission Statement" #newMission>
     <input placeholder="Image" #newImage>
-    <input placeholder="Contact Email" #newContact>
+    <input placeholder="Contact Email or Phone" #newContact>
     <input placeholder="Fundraising Goal" #newGoal>
     <select #newCategory>
-      <option value="youth">Youth Development</option>
-      <option value="animals">Animals</option>
-      <option value="community">Community</option>
-      <option value="enviornment">Environment</option>
+      <option value="Youth Development">Youth Development</option>
+      <option value="Animals">Animals</option>
+      <option value="Community">Community</option>
+      <option value="Enviornment">Environment</option>
     </select>
     <input placeholder="Desired photo hashtags" #newHashtag>
     <button class="newCharityListSlide" (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCategory, newHashtag)">Add</button>
