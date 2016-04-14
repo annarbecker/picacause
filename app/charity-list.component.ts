@@ -52,14 +52,7 @@ export class CharityListComponent {
     });
 
     //this code will return charity ids based on name, needs to be moved to cards component, or cart component or something
-    this.myDataRef.child('charities').orderByChild('name').equalTo('Outside In').on('child_added', function(snapshot) {
-      var secured = snapshot.val().secured;
-      var newSecured = secured + 5;
-      var charityRef = charityListClass.myDataRef.child('charities').child(snapshot.key());
-      charityRef.update({
-        "secured": newSecured
-      });
-    });
+    
   }
   createCharity(charityArray: Array<any>): void {
     // this.charityList.push (
