@@ -16,7 +16,7 @@ import {AdminLoginComponent} from './admin-login.component';
   <header>
     <div class="container header">
       <p class="logo homeSlide">pica<span>cause</span></p>
-      <ul class="nav">
+      <ul class="navvy">
         <li><a class="homeSlide" href="#">home</a></li>
         <li><a href="#">about</a></li>
         <li><a href="#">contact</a></li>
