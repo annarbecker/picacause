@@ -18,7 +18,7 @@ import {AdminLoginComponent} from './admin-login.component';
 
   <header>
     <div class="container header">
-      <p class="logo homeSlide">pica<span>cause</span></p>
+      <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
       <ul class="navvy">
         <li><a class="homeSlide" href="#">home</a></li>
         <li><a data-toggle="modal" data-target="#myModal">about</a></li>
@@ -41,23 +41,38 @@ import {AdminLoginComponent} from './admin-login.component';
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title">
-          <div id="welcome">
-            <h4>Welcome to PicaCause!</h4>
-          </div>
-       </div>
+          <h1>Welcome to Pic-A-Cause!</h1>
+          <p>We host fund-raising campaigns for charities, selling prints photographed by supporters through instagram.</p>
+        </div>
       </div>
       <div class="modal-body">
-      <div class="whoAreYou">
-        <h5>Are you a charity?</h5>
-        <object>
-        <img src="../resources/img/heart.svg">
-        </object>
-        <svg-heart></svg-heart>
-        <h5> We're lowering the barrier of contribution.</h5>
-      </div>
-      <div class="whoAreYou">
-        <h5>Do you want to contribute? Harness the value of your creativity for good!</h5>
-      </div>
+        <div class="mission row">
+          <h4>Getting Involved</h4>
+          <p>Support your charity by hashtaging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
+        </div>
+        <div class="mission row">
+          <h4>Navigating the App</h4>
+          <div class="col col-left col-xs-6">
+            <div class="instructions row">
+              <div class="col col-xs-9">
+                <p>Do you want to find a print? Click here:</p>
+              </div>
+              <div class="col col-xs-2">
+                <svg-camera class=svgCamera></svg-camera>
+              </div>
+            </div>
+          </div>
+          <div class="col col-right col-xs-6">
+            <div class="instructions row">
+              <div class="col col-xs-9">
+                <p>Or are you looking for a charity? Click here:</p>
+              </div>
+              <div class="col col-xs-2">
+                <svg-heart class=svgHeart></svg-heart>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

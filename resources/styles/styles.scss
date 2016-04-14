@@ -4,6 +4,8 @@
 @import 'charities';
 @import 'pictures';
 @import 'variables';
+@import 'modal';
+@import 'charityDetail';
 
 
 * {
@@ -22,16 +24,7 @@ a {
     text-decoration: none;
   }
 }
-.container {
-  border: 1px solid blue;
-}
-body, html {
 
-}
-// .container {
-//   width: 980;
-//   margin: 0 auto;
-// }
 div.wrap {
   overflow-x: hidden;
 }
@@ -53,7 +46,6 @@ footer {
   background-color: lightgray;
   height: 6rem;
   width: 100%;
-
 }
 
 .charity-list {
@@ -217,14 +209,20 @@ footer {
 }
 
 .shoppingCart {
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   img {
     height: 100px;
     width: 100px;
     margin: 3px;
   }
+}
+
+.checkoutBtns {
+  display: flex;
 }
 
 //•••••• PICTURES •••••••
@@ -240,22 +238,5 @@ footer {
   }
   .userNotFound {
     display: none;
-  }
-}
-
-.picList {
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-}
-
-
-//•••••• MODAL •••••••
-
-#welcome {
-  text-align: center;
-  h4 {
-    font-weight: bold;
-    font-size: 3rem;
   }
 }

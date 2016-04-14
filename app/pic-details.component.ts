@@ -7,11 +7,13 @@ import { Charity } from './charity.model';
   inputs: ['pic'],
   outputs: ['onAddToCart'],
   template: `
-    <p>Select Charity</p>
-    <select #newCharity>
-      <option *ngFor="#charity of charityList" value={{charity.name}}>{{charity.name}}</option>
-    </select>
-    <button (click)="addToCart(pic, newCharity)" class="addToCart">Add to Cart</button>
+    <div class="picGuts">
+    <p class="selectHeader">select charity</p>
+      <select #newCharity>
+        <option *ngFor="#charity of charityList" value={{charity.name}}>{{charity.name}}</option>
+      </select>
+      <button (click)="addToCart(pic, newCharity)" class="addToCart">add to cart</button>
+    </div>
   `
 })
 
