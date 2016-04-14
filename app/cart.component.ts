@@ -1,6 +1,8 @@
 import {Component, EventEmitter} from 'angular2/core';
 import {Card} from './card.model';
 
+///<reference path="jquery.d.ts" />
+
 
 @Component({
   selector: 'cart',
@@ -44,6 +46,7 @@ export class CartComponent {
         });
       });
     }
+
     this.cart = [];
     this.onCheckout.emit(0);
   }

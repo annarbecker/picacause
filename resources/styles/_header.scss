@@ -4,11 +4,11 @@ header {
   display: flex;
   align-items: center;
   // justify-content: space-between;
-  background: #ffda7a;
+  background: $color-yellow-main;
   background-repeat: repeat;
   background-blend-mode: multiply;
   width: 100%;
-  border-bottom: 1rem solid darken(#ffda7a, 20%);
+  border-bottom: 1rem solid darken($color-yellow-main, 20%);
   height: 8rem;
 }
 .header {
@@ -32,14 +32,17 @@ header {
   font-size: 2rem;
   color: navy;
   transition: $transition-quick;
-  span {
+  .logo-medblue {
     color: lighten(navy, 50%);
+  }
+  .logo-lightblue {
+    color: navy;
   }
   &:hover {
     cursor: pointer;
-    color: lighten(navy, 30%);
+    color: lighten(navy, 40%);
     span {
-      color: lighten(navy, 52%);
+      color: lighten(navy, 55%);
     }
   }
 }
