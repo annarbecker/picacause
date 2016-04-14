@@ -26,7 +26,10 @@ import {NewCharityComponent} from './new-charity.component';
       <br>
       <h4>Charity Applications:</h4>
       <div *ngFor="#currentCharityRequest of charityRequestList">
-        {{currentCharityRequest.name}}
+        <p (click)="selectCharityRequest(currentCharity)">{{currentCharityRequest.name}} <span class="approve"></span>  <span class="reject">X</span></p>
+        <div *ngIf="currentCharityRequest === selectedCharityRequest">
+
+        </div>
       </div>
       <br>
       <br>
