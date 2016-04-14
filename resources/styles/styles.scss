@@ -117,6 +117,7 @@ footer {
     height: 1rem;
   }
 }
+
 .homeCardsSlide {
   display: flex;
   flex-direction: column;
@@ -136,6 +137,7 @@ footer {
     }
   }
 }
+
 .home {
   display: flex;
   position: absolute;
@@ -146,6 +148,9 @@ footer {
   height: auto;
   margin: auto;
 }
+
+
+//•••••• CHARITY •••••••
 
 .charityList {
   // position: relative;
@@ -178,9 +183,24 @@ footer {
   height: auto;
 }
 
+//•••••• HOME PAGE •••••••
+
 .cart {
   display: none;
 }
+
+.shoppingCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+  }
+}
+
+//•••••• PICTURES •••••••
 
 .picList {
   // display: flex;
@@ -195,13 +215,12 @@ footer {
   margin: 1rem;
 }
 
-.shoppingCart {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  img {
-    height: 100px;
-    width: 100px;
-    margin: 3px;
+//•••••• MODAL •••••••
+
+#welcome {
+  text-align: center;
+  h4 {
+    font-weight: bold;
+    font-size: 3rem;
   }
 }
