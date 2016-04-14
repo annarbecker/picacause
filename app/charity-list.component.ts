@@ -49,7 +49,7 @@ export class CharityListComponent {
       console.log("The read failed: " + errorObject.code);
     });
   }
-
+  
   charityClicked(clickedCharity: Charity) {
     if(this.selectedCharity === clickedCharity) {
       this.selectedCharity = undefined;

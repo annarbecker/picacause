@@ -11,7 +11,7 @@ import {PicDetailsComponent} from './pic-details.component'
   template: `
   <h2>API test</h2>
   <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
-  <a target="blank" href="https://instagram.com/accounts/logout/">Instagram Logout</a>
+  <a (click)="signOut()" target="blank" href="https://instagram.com/accounts/logout/">Instagram Logout</a>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
@@ -73,5 +73,9 @@ export class PicListComponent {
 
   addToCart(pic: Card) {
     this.onAddToCart.emit(pic);
+  }
+
+  signOut() {
+    location.reload();
   }
 }

@@ -4,6 +4,7 @@
 @import 'charities';
 @import 'pictures';
 @import 'variables';
+@import 'modal';
 @import 'charityDetail';
 
 
@@ -109,7 +110,6 @@ footer {
 
 .home-cart-icon {
   height: 1rem;
-  border: 1px solid purple;
   img {
     height: 1rem;
   }
@@ -122,7 +122,6 @@ footer {
   align-items: center;
   background-color: turquoise;
   height: 100vh;
-  // width: 50%;
   flex: 1 1 50%;
   transition: $transition-quick;
   &:hover {
@@ -144,6 +143,37 @@ footer {
   width: 100%;
   height: auto;
   margin: auto;
+}
+
+.charityRequest {
+  font-size: 20px;
+}
+
+.approve {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #595959;
+  padding: 3px 6px;
+  color: green;
+  margin-left: 40px;
+}
+
+.approve:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+.reject {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #595959;
+  padding: 3px 9px;
+  color: red;
+}
+
+.reject:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
 }
 
 //•••••• CHARITY •••••••
@@ -206,16 +236,5 @@ footer {
   }
   .userNotFound {
     display: none;
-  }
-}
-
-
-//•••••• MODAL •••••••
-
-#welcome {
-  text-align: center;
-  h4 {
-    font-weight: bold;
-    font-size: 3rem;
   }
 }
