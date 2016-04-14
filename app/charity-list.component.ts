@@ -14,11 +14,6 @@ import {CharityDetailsComponent} from './charity-details.component';
       <img class="charityImage" (click)="charityClicked(currentCharity)" src="{{currentCharity.image}}">
       <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
     </div>
-  </div>
-    <button class="listNewCharitySlide">New Charity</button>
-  <div class="newCharity">
-    <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
-  </div>
   `
 })
 
@@ -51,6 +46,7 @@ export class CharityListComponent {
       console.log("The read failed: " + errorObject.code);
     });
   }
+<<<<<<< HEAD
   createCharity(charityArray: Array<any>): void {
     // this.charityList.push (
     //   new Charity(charityArray[0], charityArray[1], charityArray[2], charityArray[3], charityArray[4], 0, charityArray[5], charityArray[6])
@@ -67,8 +63,10 @@ export class CharityListComponent {
       hashtag: charityArray[6]
     });
   }
+=======
+
+>>>>>>> 876f7d27e0e1b757c75cded0f29fe7b54d7292f9
   charityClicked(clickedCharity: Charity) {
-    console.log('it works?');
     if(this.selectedCharity === clickedCharity) {
       this.selectedCharity = undefined;
     } else {

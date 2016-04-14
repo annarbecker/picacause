@@ -3,6 +3,8 @@
 @import 'header';
 @import 'charities';
 @import 'pictures';
+@import 'variables';
+
 
 * {
   margin: 0;
@@ -19,6 +21,9 @@ a {
     color: tomato;
     text-decoration: none;
   }
+}
+.container {
+  border: 1px solid blue;
 }
 body, html {
 
@@ -49,10 +54,6 @@ footer {
   height: 6rem;
   width: 100%;
 
-}
-.home-icon {
-  height: 10rem;
-  width: auto;
 }
 
 .charity-list {
@@ -85,7 +86,7 @@ footer {
   height: 100vh;
   // padding: 20% 0;
   flex: 1 1 50%;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
   &:hover {
     cursor: pointer;
     height: calc(100vh + 1rem);
@@ -98,7 +99,7 @@ footer {
 .home-icon-title {
   opacity: 0;
   color: white;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
 }
 .home-icon {
   display: flex;
@@ -106,9 +107,12 @@ footer {
   justify-content: center;
   align-items: center;
   height: 6rem;
-  transition: all 0.3s ease-in-out;
-  img {
-    height: 100%;
+  transition: $transition-quick;
+  svg {
+    height: 6rem;
+    path {
+      fill: #FFFFFF;
+    }
   }
 }
 
@@ -119,6 +123,7 @@ footer {
     height: 1rem;
   }
 }
+
 .homeCardsSlide {
   display: flex;
   flex-direction: column;
@@ -128,7 +133,7 @@ footer {
   height: 100vh;
   // width: 50%;
   flex: 1 1 50%;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
   &:hover {
     cursor: pointer;
     height: calc(100vh + 1rem);
@@ -138,6 +143,7 @@ footer {
     }
   }
 }
+
 .home {
   display: flex;
   position: absolute;
@@ -145,6 +151,18 @@ footer {
   right: 0;
   top: 100;
   width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+//•••••• CHARITY •••••••
+
+.charityList {
+  // position: relative;
+  left: 0;
+  right: 0;
+  top: 100;
+  width: 80%;
   height: auto;
   margin: auto;
 }
@@ -159,6 +177,10 @@ footer {
   margin: auto;
 }
 
+
+
+//•••••• HOME PAGE •••••••
+
 .cart {
   display: none;
 }
@@ -171,5 +193,38 @@ footer {
     height: 100px;
     width: 100px;
     margin: 3px;
+  }
+}
+
+//•••••• PICTURES •••••••
+
+.apply {
+  margin-left: 10%;
+  display: none;
+  .adminPage {
+    display: none;
+  }
+  .loginFailed {
+    display: none;
+  }
+  .userNotFound {
+    display: none;
+  }
+}
+
+.picList {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+}
+
+
+//•••••• MODAL •••••••
+
+#welcome {
+  text-align: center;
+  h4 {
+    font-weight: bold;
+    font-size: 3rem;
   }
 }

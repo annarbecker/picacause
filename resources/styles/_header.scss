@@ -1,6 +1,9 @@
+@import 'variables';
+
 header {
   display: flex;
   align-items: center;
+  // justify-content: space-between;
   background: #ffda7a;
   background-repeat: repeat;
   background-blend-mode: multiply;
@@ -12,18 +15,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.5rem auto 0 auto;
-  ul {
+  // margin: 0.5rem auto 0 auto;
+  .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 50%;
+    @media #{$screen-small} {
+      display: none;
+    }
   }
 }
 .logo {
+  margin: 0;
   font-weight: bolder;
   font-size: 2rem;
   color: navy;
+  transition: $transition-quick;
   span {
     color: lighten(navy, 50%);
   }
@@ -35,12 +43,24 @@ header {
     }
   }
 }
+
+.navvy {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  margin: 0;
+  li {
+    display: flex;
+    align-items: center;
+  }
+}
 .nav-cart-icon {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // border: 1px solid purple;
-  transition: all 0.3s ease-in-out;
+  transition: $transition-quick;
   width: 15rem;
   #cart-count {
     margin: 0 0 0 1rem;
@@ -55,8 +75,11 @@ header {
     opacity: 0;
     transform: translate(-4rem);
     color: white;
-    transition: all 0.3s ease-in-out;
+    transition: $transition-quick;
     z-index: 1;
+  }
+  p {
+    margin: 0;
   }
     &:hover {
       svg {
@@ -66,6 +89,13 @@ header {
       opacity: 1;
       transform: translate(0rem);
       color: white;
+    }
+  }
+  .svgCart {
+    svg {
+      path {
+        fill: #FFFFFF;
+      }
     }
   }
 }
