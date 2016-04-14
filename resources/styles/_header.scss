@@ -11,26 +11,15 @@ header {
   border-bottom: 1rem solid darken($color-yellow-main, 20%);
   height: 8rem;
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // margin: 0.5rem auto 0 auto;
-  .navvy {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-    @media #{$screen-small} {
-      display: none;
-    }
-  }
+.container {
+  padding: 0;
 }
 .logo {
   margin: 0;
   font-weight: bolder;
   font-size: 2rem;
   color: navy;
+  flex: 1;
   transition: $transition-quick;
   .logo-medblue {
     color: lighten(navy, 50%);
@@ -46,21 +35,34 @@ header {
     }
   }
 }
-
+.header {
+  display: flex;
+  justify-content: space-between;
+}
 .navvy {
   display: flex;
-  align-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 70%;
   margin: 0;
-  li {
+  @media #{$screen-small} {
+    display: none;
+  }
+  ul {
+    flex: 1;
     display: flex;
+
+    justify-content: space-between;
+    width: 60%;
     align-items: center;
+    li {
+      margin: 0 0.5rem 0 0;
+    }
   }
 }
 .nav-cart-icon {
   display: flex;
+  margin: 0 0 0 10%;
   align-items: center;
   justify-content: space-between;
   transition: $transition-quick;
