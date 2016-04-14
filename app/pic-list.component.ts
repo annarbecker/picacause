@@ -16,7 +16,7 @@ import {PicDetailsComponent} from './pic-details.component'
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
       <div *ngIf="currentPic === selectedPic">
-        <a  (click)="linkClicked(currentPic)" class="returnToCards">Return to all cards</a>
+        <button (click)="linkClicked(currentPic)" class="returnToCards">return to all cards</button>
         <pic-details [pic]="currentPic" (onAddToCart)="addToCart($event)"></pic-details>
       </div>
     </div>
