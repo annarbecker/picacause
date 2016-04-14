@@ -1,25 +1,30 @@
-import {Component} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
 import {Card} from './card.model';
 
 
 @Component({
   selector: 'cart',
   inputs: ['cart'],
+  outputs: ['onCheckout'],
   template: `
   <div *ngFor="#item of cart" class="shoppingCart">
     <img src="{{item.image}}">
     <p>Photographer: {{item.photographer}}</p>
     <p>Price: \${{item.price}}</p>
   </div>
-  <button (click)="checkout()">Checkout</button>
-  <button class="homeFadeIn">Close Cart</button>
+  <button (click)="checkout()" class="homeSlide">Checkout</button>
+  <button class="homeSlide">Close Cart</button>
   <p>Total: \${{getTotal()}}.00</p>
   `
 })
 
 export class CartComponent {
   public cart: Array<any>;
+  public onCheckout: EventEmitter<any>;
   public myDataRef = new Firebase('https://picacause.firebaseio.com/');
+  constructor() {
+    this.onCheckout = new EventEmitter();
+  }
   getTotal() {
     var total = 0;
     for(var i = 0; i < this.cart.length; i++) {
@@ -39,5 +44,7 @@ export class CartComponent {
         });
       });
     }
+    this.cart = [];
+    this.onCheckout.emit(0);
   }
 }
