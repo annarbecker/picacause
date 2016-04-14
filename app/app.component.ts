@@ -24,7 +24,7 @@ import {Card} from './card.model';
         <li><a href="#">contact</a></li>
       </ul>
       <a href="#" class="homeCartShow nav-cart-icon">
-      <svg-cart id=svgCart></svg-cart>
+      <svg-cart class=svgCart></svg-cart>
       <p id="cart-count">{{cartCount}}</p>
       <p id="open-cart-hover">open cart</p>
       </a>
@@ -65,13 +65,13 @@ import {Card} from './card.model';
     <div class="home">
       <div class="homeCardsSlide pointer">
         <div class="home-icon">
-          <svg-camera></svg-camera>
+          <svg-camera class=svgCamera></svg-camera>
           <h4 class="home-icon-title">go to photos</h4>
         </div>
       </div>
       <div class="homeNewCharitySlide pointer">
       <div class="home-icon">
-        <svg-heart></svg-heart>
+        <svg-heart class=svgHeart></svg-heart>
         <h4 class="home-icon-title">go to charities</h4>
       </div>
       </div>

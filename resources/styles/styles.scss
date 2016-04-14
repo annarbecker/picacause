@@ -48,10 +48,6 @@ footer {
   width: 100%;
 
 }
-.home-icon {
-  height: 10rem;
-  width: auto;
-}
 
 .charity-list {
   position: absolute;
@@ -105,8 +101,11 @@ footer {
   align-items: center;
   height: 6rem;
   transition: all 0.3s ease-in-out;
-  img {
-    height: 100%;
+  svg {
+    height: 6rem;
+    path {
+      fill: #FFFFFF;
+    }
   }
 }
 
