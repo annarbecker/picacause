@@ -4,6 +4,7 @@
 @import 'charities';
 @import 'pictures';
 @import 'variables';
+@import 'modal';
 
 
 * {
@@ -216,15 +217,4 @@ footer {
   // display: flex;
   // flex-direction: row;
   // flex-wrap: wrap;
-}
-
-
-//•••••• MODAL •••••••
-
-#welcome {
-  text-align: center;
-  h4 {
-    font-weight: bold;
-    font-size: 3rem;
-  }
 }
