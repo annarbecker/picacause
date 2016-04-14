@@ -4,6 +4,7 @@
 @import 'charities';
 @import 'pictures';
 @import 'variables';
+@import 'modal';
 @import 'charityDetail';
 
 
@@ -206,16 +207,5 @@ footer {
   }
   .userNotFound {
     display: none;
-  }
-}
-
-
-//•••••• MODAL •••••••
-
-#welcome {
-  text-align: center;
-  h4 {
-    font-weight: bold;
-    font-size: 3rem;
   }
 }
