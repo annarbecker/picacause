@@ -6,10 +6,11 @@ import { SignUpComponent } from './sign-up.component';
 import {PicListComponent} from './pic-list.component';
 import {CartComponent} from './cart.component';
 import {Card} from './card.model';
+import {AdminLoginComponent} from './admin-login.component';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent],
+  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, AdminLoginComponent],
   template: `
 
   <header>
@@ -19,6 +20,7 @@ import {Card} from './card.model';
         <li><a class="homeSlide" href="#">home</a></li>
         <li><a href="#">about</a></li>
         <li><a href="#">contact</a></li>
+        <li><a class="adminFade" href="#">apply</a></li>
       </ul>
       <a href="#" class="homeCartShow nav-cart-icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 399.6 399.6" enable-background="new 0 0 399.6 399.6" width="3rem" height="3rem">
@@ -58,6 +60,9 @@ import {Card} from './card.model';
     <div class="cart">
       <cart [cart]="cart" (onCheckout)="clearCart($event)"></cart>
     </div>
+    <div class="apply">
+      <admin-login (onSubmitNewCharity)="createCharity($event)"></admin-login>
+    </div>
   </section>
     `
 })
@@ -86,8 +91,23 @@ export class AppComponent {
       password: userArray[1]
     });
   }
+
   clearCart(number) {
     this.cartCount = 0;
     this.cart = [];
+  }
+
+  createCharity(charityArray: Array<any>): void {
+    var charitiesRef = this.myDataRef.child("charities");
+    charitiesRef.push({
+      name: charityArray[0],
+      mission: charityArray[1],
+      image: charityArray[2],
+      concat: charityArray[3],
+      goal: charityArray[4],
+      secured: 0,
+      category: charityArray[5],
+      hashtag: charityArray[6]
+    });
   }
 }

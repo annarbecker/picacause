@@ -14,10 +14,6 @@ import {CharityDetailsComponent} from './charity-details.component';
       <p>{{currentCharity.name}}</p>
       <charity-details [charity]="currentCharity" *ngIf="currentCharity === selectedCharity"></charity-details>
     </div>
-    <button class="listNewCharitySlide">New Charity</button>
-  <div class="newCharity">
-    <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
-  </div>
   `
 })
 
@@ -39,7 +35,6 @@ export class CharityListComponent {
       charityListClass.charityList = [];
       //save results to array
       var charities = snapshot.val().charities;
-      console.log(snapshot.val().charities);
       for(var key in charities) {
         //Skip loop if property is from prototype
         if(!charities.hasOwnProperty(key)) continue;
@@ -50,31 +45,9 @@ export class CharityListComponent {
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
+  }
 
-    //this code will return charity ids based on name, needs to be moved to cards component, or cart component or something
-    
-  }
-  createCharity(charityArray: Array<any>): void {
-    // this.charityList.push (
-    //   new Charity(charityArray[0], charityArray[1], charityArray[2], charityArray[3], charityArray[4], 0, charityArray[5], charityArray[6])
-    // );
-    var charitiesRef = this.myDataRef.child("charities");
-    charitiesRef.push({
-      name: charityArray[0],
-      mission: charityArray[1],
-      image: charityArray[2],
-      concat: charityArray[3],
-      goal: charityArray[4],
-      secured: 0,
-      category: charityArray[5],
-      hashtag: charityArray[6]
-    });
-    charitiesRef.orderByChild('name').equalTo('Outside In').on('child_added', function(snapshot) {
-      console.log(snapshot.key());
-    });
-  }
   charityClicked(clickedCharity: Charity) {
-    console.log('it works?');
     if(this.selectedCharity === clickedCharity) {
       this.selectedCharity = undefined;
     } else {

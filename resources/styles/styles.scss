@@ -182,6 +182,13 @@ footer {
   display: none;
 }
 
+.apply {
+  display: none;
+  .adminPage {
+    display: none;
+  }
+}
+
 .picList {
   // display: flex;
   // flex-direction: row;
