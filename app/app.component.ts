@@ -80,13 +80,13 @@ import {AdminLoginComponent} from './admin-login.component';
 </div>
   <section>
     <div class="home">
-      <div class="homeCardsSlide pointer">
+      <div class="homeCardsSlide">
         <div class="home-icon">
           <svg-camera class=svgCamera></svg-camera>
           <h4 class="home-icon-title">go to photos</h4>
         </div>
       </div>
-      <div class="homeNewCharitySlide pointer">
+      <div class="homeNewCharitySlide">
       <div class="home-icon">
         <svg-heart class=svgHeart></svg-heart>
         <h4 class="home-icon-title">go to charities</h4>
