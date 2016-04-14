@@ -183,8 +183,15 @@ footer {
 }
 
 .apply {
+  margin-left: 10%;
   display: none;
   .adminPage {
+    display: none;
+  }
+  .loginFailed {
+    display: none;
+  }
+  .userNotFound {
     display: none;
   }
 }
