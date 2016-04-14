@@ -2,16 +2,16 @@ import { Component, EventEmitter } from 'angular2/core';
 import { Card } from './card.model';
 import { Charity } from './charity.model';
 
-
 @Component({
   selector: 'pic-details',
   inputs: ['pic'],
   outputs: ['onAddToCart'],
   template: `
+    <p>Select Charity</p>
     <select #newCharity>
       <option *ngFor="#charity of charityList" value={{charity.name}}>{{charity.name}}</option>
     </select>
-    <button (click)="addToCart(pic, newCharity)">Add to Cart</button>
+    <button (click)="addToCart(pic, newCharity)" class="addToCart">Add to Cart</button>
   `
 })
 

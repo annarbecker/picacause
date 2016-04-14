@@ -62,6 +62,7 @@ $(function() {
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
     });
+
     $('.charity>img').on('click', function() {
       var thisCharity = $(this).parent();
       console.log($(thisCharity)[0]);
@@ -108,8 +109,8 @@ $(function() {
         });
         full=true;
       } else {
-        d.width = "640px";
-        d.height = "640px";
+        d.width = "300px";
+        d.height = "300px";
         $(this).parent().css("position","");
         $(this).parent().animate(d, speed, function() {
           $('.picture').each(function() {
@@ -120,7 +121,22 @@ $(function() {
         });
         full = false;
       }
+      $('.returnToCards').on('click', function() {
+          d.width = "300px";
+          d.height = "300px";
+          $(this).parent().css("position","");
+          $(this).parent().animate(d, speed, function() {
+            $('.picture').each(function() {
+              if($(this)[0] !== $(thisPic)[0]) {
+                $(this).fadeIn('fast');
+              }
+            });
+          });
+          full = false;
+
+      });
     });
 
-  }, 1000);
+
+  }, 1500);
 });

@@ -2,6 +2,7 @@
 @import 'buttons';
 @import 'header';
 @import 'charities';
+@import 'pictures';
 
 * {
   margin: 0;
@@ -160,19 +161,6 @@ footer {
 
 .cart {
   display: none;
-}
-
-.picList {
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-}
-
-.picture {
-  border: 1px solid blue;
-  width: 640px;
-  height: auto;
-  margin: 1rem;
 }
 
 .shoppingCart {
