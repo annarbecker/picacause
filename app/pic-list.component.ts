@@ -16,7 +16,7 @@ import {PicDetailsComponent} from './pic-details.component'
       Instagram Login
     </a>
   </button>
-  <a href="/"><button (click)="signOut()">Instagram Logout</button></a>
+  <button><a (click)="signOut()" href="/">Instagram Logout</a></button>
 </div>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
