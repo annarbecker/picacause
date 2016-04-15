@@ -23,8 +23,7 @@ import { Charity } from './charity.model';
       <div class="secured-metrics">
         <div class="amount-secured">
         </div>
-        <div class="amount-desired">
-        </div>
+        <!-- ".amount-desired" Intentionally Removed DD-->
       </div>
     </div>
   </div>

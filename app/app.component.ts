@@ -19,6 +19,8 @@ import {AdminLoginComponent} from './admin-login.component';
     <div class="container">
       <div class="header">
         <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
+
+<!-- ••••• Nav Bar ••••• -->
         <div class="navvy">
           <ul>
             <li><a class="homeSlide" href="#">home</a></li>
@@ -32,6 +34,8 @@ import {AdminLoginComponent} from './admin-login.component';
             <p id="open-cart-hover">open cart</p>
           </a>
         </div>
+
+<!-- ••••• Nav Bar Collapse ••••• -->
         <div class="nav-collapse">
           <span class="nav-collapse-icon">&equiv;</span>
           <ul class="nav-collapse-dropdown">
@@ -41,6 +45,7 @@ import {AdminLoginComponent} from './admin-login.component';
             <li class="adminFade">apply</li>
           </ul>
         </div>
+
       </div>
     </div>
   </header>
@@ -79,6 +84,8 @@ import {AdminLoginComponent} from './admin-login.component';
   </div>
 </div>
   <section>
+
+<!-- ••••• Home Page ••••• -->
     <div class="home">
       <div class="homeCardsSlide">
         <div class="home-to-pics">
@@ -98,6 +105,7 @@ import {AdminLoginComponent} from './admin-login.component';
         </div>
       </div>
 
+<!-- ••••• Charities Page ••••• -->
     <div class="charity-list">
       <charity-list></charity-list>
     </div>
