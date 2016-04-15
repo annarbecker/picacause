@@ -3,7 +3,7 @@
 header {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
+  justify-content: space-between;
   background: $color-yellow-main;
   background-repeat: repeat;
   background-blend-mode: multiply;
@@ -15,6 +15,8 @@ header {
   padding: 0;
 }
 .logo {
+  display: flex;
+  align-items: center;
   margin: 0;
   font-weight: bolder;
   font-size: 2rem;
@@ -37,7 +39,8 @@ header {
 }
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  width: 80%;
 }
 .navvy {
   display: flex;
@@ -51,7 +54,7 @@ header {
   ul {
     flex: 1;
     display: flex;
-
+    margin: 0;
     justify-content: space-between;
     width: 60%;
     align-items: center;
@@ -102,5 +105,21 @@ header {
         fill: #FFFFFF;
       }
     }
+  }
+}
+.nav-collapse {
+  .nav-collapse-icon {
+    display: flex;
+    align-items: center;
+    font-size: 6rem;
+    display: none;
+    text-align: right;
+    flex: 1;
+    @media #{$screen-small} {
+      display: inline-block;
+    }
+  }
+  .nav-collapse-dropdown {
+    display: none;
   }
 }

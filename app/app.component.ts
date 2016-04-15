@@ -15,7 +15,6 @@ import {AdminLoginComponent} from './admin-login.component';
   selector: 'my-app',
   directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent],
   template: `
-
   <header>
     <div class="container header">
       <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
@@ -31,6 +30,15 @@ import {AdminLoginComponent} from './admin-login.component';
           <p id="cart-count">{{cartCount}}</p>
           <p id="open-cart-hover">open cart</p>
         </a>
+      </div>
+      <div class="nav-collapse">
+        <span class="nav-collapse-icon">&equiv;</span>
+        <ul class="nav-collapse-dropdown">
+          <li>home</li>
+          <li>about</li>
+          <li>contact</li>
+          <li>apply</li>
+        </ul>
       </div>
     </div>
   </header>
