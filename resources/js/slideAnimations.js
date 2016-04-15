@@ -3,6 +3,7 @@ function charityAnimate(full, d, speed, thisCharity) {
 
     console.log(thisCharity[0]);
     if(!full) {
+      console.log('hidden');
       $('.charity').each(function() {
         if($(this)[0] !== thisCharity[0]){
           $(this).hide();
@@ -57,7 +58,8 @@ function charityAnimate(full, d, speed, thisCharity) {
 
 $(function() {
   setTimeout(function() {
-    var full = false;
+    var charityFull = false;
+    var imageFull = false;
     var d = {};
     var speed = 500;
     $('.homeNewCharitySlide').click(function() {
@@ -106,6 +108,7 @@ $(function() {
       $('.cards').fadeIn();
       $('.cart').fadeOut();
       $('.apply').fadeOut();
+      $('.contact').fadeOut();
     });
     $('.listNewCharitySlide').click(function() {
       $('.charity-list').animate({
@@ -128,10 +131,12 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
+      $('.apply').fadeOut();
+      $('.contact').fadeOut();
       $('.homeSlide').click(function() {
         $('.charity>img').on('click', function() {
           var thisCharity = $(this).parent();
-          full = charityAnimate(full, d, speed, thisCharity);
+          charityFull = charityAnimate(charityFull, d, speed, thisCharity);
         });
       });
     });
@@ -140,78 +145,32 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
+      $('.cart').fadeOut();
+      $('.apply').fadeOut();
     });
     $('.adminFade').click(function() {
       $('.apply').fadeIn(500);
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
+      $('.cart').fadeOut();
+      $('.contact').fadeOut();
       $('.homeSlide').click(function() {
         $('.charity>img').on('click', function() {
           var thisCharity = $(this).parent();
-          full = charityAnimate(full, d, speed, thisCharity);
+          charityFull = charityAnimate(charityFull, d, speed, thisCharity);
         });
       });
     });
     $('.charity>img').on('click', function() {
+      console.log('it works');
       var thisCharity = $(this).parent();
-    //   var thisCharity = $(this).parent();
-    //   console.log($(thisCharity)[0]);
-    //   if(!full) {
-    //     $('.charity').each(function() {
-    //       if($(this)[0] !== $(thisCharity)[0]){
-    //         $(this).hide();
-    //       }
-    //     });
-    //     d.height = "80vh";
-    //     d.width = "80vw";
-    //     $(this).parent().animate(d, speed, function(){
-    //
-    //     });
-    //     full=true;
-    //   } else {
-    //     d.width = "300px";
-    //     d.height = "300px";
-    //     $(this).parent().css("position","");
-    //     $(this).parent().animate(d, speed, function() {
-    //       $('.charity').each(function() {
-    //         if($(this)[0] !== $(thisCharity)[0]) {
-    //           $(this).fadeIn('fast');
-    //         }
-    //       });
-    //     });
-    //     full = false;
-    //   }
-    //   $('.viewCards').click(function() {
-    //     $('.cards').animate({
-    //       left: '0'
-    //     }, 500);
-    //     $('.charity-list').animate({
-    //       left: '200%'
-    //     }, 500);
-    //     $('.home').css("left", "200%");
-    //   });
-    //
-    //   $('.viewCharities').on('click', function() {
-    //       d.width = "300px";
-    //       d.height = "300px";
-    //       $('.charity').css("height", "300px");
-    //       $(this).parent().css("position","");
-    //       $(this).parent().animate(d, speed, function() {
-    //         $('.charity').each(function() {
-    //           if($(this)[0] !== $(thisCharity)[0]) {
-    //             $(this).fadeIn('fast');
-    //           }
-    //         });
-    //       });
-    //       full = false;
-    //   });
-      full = charityAnimate(full, d, speed, thisCharity);
+      charityFull = charityAnimate(charityFull, d, speed, thisCharity);
     });
     $('.picture>img').on('click', function() {
       var thisPic = $(this).parent();
       console.log($(thisPic)[0]);
-      if(!full) {
+      if(!imageFull) {
         $('.picture').each(function() {
           if($(this)[0] !== $(thisPic)[0]){
             $(this).hide();
@@ -222,7 +181,7 @@ $(function() {
         $(this).parent().animate(d, speed, function(){
 
         });
-        full=true;
+        imageFull=true;
       } else {
         d.width = "300px";
         d.height = "300px";
@@ -234,7 +193,7 @@ $(function() {
             }
           });
         });
-        full = false;
+        imageFull = false;
       }
       $('.returnToCards').on('click', function() {
           d.width = "300px";
@@ -248,7 +207,7 @@ $(function() {
               }
             });
           });
-          full = false;
+          imageFull = false;
       });
     });
   }, 3000);

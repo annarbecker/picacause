@@ -8,6 +8,7 @@ import {CharityDetailsComponent} from './charity-details.component';
   selector: 'charity-list',
   directives: [NewCharityComponent, CharityDetailsComponent],
   template: `
+    <h3 class="container pageHeader">pic<span class="logoLetter">a</span>cause</h3>
     <div class="charityContainer container">
       <div *ngFor="#currentCharity of charityList" class="charity">
         <img class="charityImage" (click)="charityClicked(currentCharity)" src="{{currentCharity.image}}">
@@ -49,7 +50,7 @@ export class CharityListComponent {
       console.log("The read failed: " + errorObject.code);
     });
   }
-  
+
   charityClicked(clickedCharity: Charity) {
     if(this.selectedCharity === clickedCharity) {
       this.selectedCharity = undefined;
