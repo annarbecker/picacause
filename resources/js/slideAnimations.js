@@ -134,10 +134,14 @@ $(function() {
       $('.apply').fadeOut();
       $('.contact').fadeOut();
       $('.homeSlide').click(function() {
-        $('.charity>img').on('click', function() {
-          var thisCharity = $(this).parent();
-          charityFull = charityAnimate(charityFull, d, speed, thisCharity);
-        });
+        console.log('it sort of works');
+        setTimeout(function() {
+          $('.charity>img').on('click', function() {
+            console.log('it works');
+            var thisCharity = $(this).parent();
+            charityFull = charityAnimate(charityFull, d, speed, thisCharity);
+          });
+        }, 1000);
       });
     });
     $('.contactFade').click(function() {
