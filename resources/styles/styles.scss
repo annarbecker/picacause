@@ -231,26 +231,28 @@ footer {
 
 // !!!ATTN!!! Are the following .cart, .shoppingCart, and .checkOutBtns rules in use?
 
-// .cart {
-//   display: none;
-// }
-//
-// .shoppingCart {
-//   margin: 1rem;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-//   img {
-//     height: 100px;
-//     width: 100px;
-//     margin: 3px;
-//   }
-// }
-//
-// .checkoutBtns {
-//   display: flex;
-// }
+.cart {
+  display: none;
+}
+
+.shoppingCart {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+  }
+}
+
+.checkoutBtns {
+  display: flex;
+  justify-content: flex-end;
+
+}
 
 //•••••• PICTURES •••••••
 
@@ -266,4 +268,25 @@ footer {
   .userNotFound {
     display: none;
   }
+}
+
+.pageHeader {
+    font-weight: bold;
+    font-size: 6rem;
+    color: darken(#40E0D0, 10);
+    text-align: center;
+    .logoLetter {
+      color: salmon;
+  }
+}
+
+.instaBtns {
+  justify-content: center;
+  margin: 2rem;
+}
+
+#cartTotal {
+  text-align: right;
+  color: darken(turquoise, 10%);
+  font-size: 2rem;
 }

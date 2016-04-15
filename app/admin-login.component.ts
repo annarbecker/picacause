@@ -7,8 +7,9 @@ import {NewCharityComponent} from './new-charity.component';
   outputs: ['onSubmitNewCharity'],
   directives: [NewCharityComponent],
   template: `
+  <h3 class="container pageHeader">apply<span class="logoLetter">a</span>cause</h3>
     <div class="login">
-      <h3>Apply to be Added to our List of Charities</h3>
+      <h4>Apply to be Added to our List of Charities</h4>
       <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
       <br>
       <br>

@@ -9,13 +9,15 @@ import {PicDetailsComponent} from './pic-details.component'
   outputs: ['onAddToCart'],
   directives: [PicDetailsComponent],
   template: `
-  <h2>API test</h2>
+  <h3 class="container pageHeader">pic<span class="logoLetter">a</span>print</h3>
+  <div class="checkoutBtns instaBtns">
   <button>
     <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">
       Instagram Login
     </a>
   </button>
   <a href="/"><button (click)="signOut()">Instagram Logout</button></a>
+</div>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">

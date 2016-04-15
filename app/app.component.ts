@@ -116,7 +116,6 @@ import {ContactComponent} from './contact.component';
       <charity-list></charity-list>
     </div>
     <div class="cards">
-      <p>All Cards</p>
       <pic-list
         [clickedPic]="clickedPic"
         (onAddToCart)=addToCart($event)>

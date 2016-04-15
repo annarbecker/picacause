@@ -24,9 +24,10 @@
 }
 
 .picGuts {
-  margin: 1rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  max-width: 70%;
   border: 1px solid lighten(salmon, 10%);
   border-radius: 5px;
   background-color: lighten(salmon, 10%);
@@ -38,7 +39,7 @@
 
 .returnToCards {
   font-size: 1.5rem;
-  margin-left: 1%;
+  margin-left: 15%;
   margin-top: 1rem;
 }
 
@@ -46,4 +47,10 @@
   margin-top: 15px;
   color: white;
   font-size: 2rem;
+}
+
+.addToCart {
+  background-color: $color-yellow-main;
+  box-shadow: 0 5px 0 $color-yellow-dark;
+  color: darken($color-yellow-dark, 20%);
 }
