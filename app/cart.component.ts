@@ -18,7 +18,7 @@ import {Card} from './card.model';
     </div>
     <p><strong>Total: \${{getTotal()}}.00</strong></p>
     <div class="checkoutBtns">
-      <button (click)="checkout()" class="homeSlide">Checkout</button>
+      <button (click)="checkout()" class="homeSlide checkout">Checkout</button>
       <button class="homeSlide">Close Cart</button>
     </div>
 </div>

@@ -1,3 +1,60 @@
+function charityAnimate(full, d, speed, thisCharity) {
+  // $('.charity>img').on('click', function() {
+
+    console.log(thisCharity[0]);
+    if(!full) {
+      $('.charity').each(function() {
+        if($(this)[0] !== thisCharity[0]){
+          $(this).hide();
+        }
+      });
+      d.height = "80vh";
+      d.width = "80vw";
+      thisCharity.animate(d, speed, function(){
+
+      });
+      full=true;
+    } else {
+      d.width = "300px";
+      d.height = "300px";
+      thisCharity.css("position","");
+      thisCharity.animate(d, speed, function() {
+        $('.charity').each(function() {
+          if($(this)[0] !== thisCharity[0]) {
+            $(this).fadeIn('fast');
+          }
+        });
+      });
+      full = false;
+    }
+    $('.viewCards').click(function() {
+      $('.cards').animate({
+        left: '0'
+      }, 500);
+      $('.charity-list').animate({
+        left: '200%'
+      }, 500);
+      $('.home').css("left", "200%");
+    });
+
+    $('.viewCharities').on('click', function() {
+        d.width = "300px";
+        d.height = "300px";
+        $('.charity').css("height", "300px");
+        $(this).parent().css("position","");
+        $(this).parent().animate(d, speed, function() {
+          $('.charity').each(function() {
+            if($(this)[0] !== thisCharity[0]) {
+              $(this).fadeIn('fast');
+            }
+          });
+        });
+        full = false;
+    });
+    return full;
+  // });
+}
+
 $(function() {
   setTimeout(function() {
     var full = false;
@@ -71,6 +128,12 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
+      $('.homeSlide').click(function() {
+        $('.charity>img').on('click', function() {
+          var thisCharity = $(this).parent();
+          full = charityAnimate(full, d, speed, thisCharity);
+        });
+      });
     });
     $('.contactFade').click(function() {
       $('.contact').fadeIn(500);
@@ -83,59 +146,67 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
+      $('.homeSlide').click(function() {
+        $('.charity>img').on('click', function() {
+          var thisCharity = $(this).parent();
+          full = charityAnimate(full, d, speed, thisCharity);
+        });
+      });
     });
     $('.charity>img').on('click', function() {
       var thisCharity = $(this).parent();
-      console.log($(thisCharity)[0]);
-      if(!full) {
-        $('.charity').each(function() {
-          if($(this)[0] !== $(thisCharity)[0]){
-            $(this).hide();
-          }
-        });
-        d.height = "80vh";
-        d.width = "80vw";
-        $(this).parent().animate(d, speed, function(){
-
-        });
-        full=true;
-      } else {
-        d.width = "300px";
-        d.height = "300px";
-        $(this).parent().css("position","");
-        $(this).parent().animate(d, speed, function() {
-          $('.charity').each(function() {
-            if($(this)[0] !== $(thisCharity)[0]) {
-              $(this).fadeIn('fast');
-            }
-          });
-        });
-        full = false;
-      }
-      $('.viewCards').click(function() {
-        $('.cards').animate({
-          left: '0'
-        }, 500);
-        $('.charity-list').animate({
-          left: '200%'
-        }, 500);
-        $('.home').css("left", "200%");
-      });
-
-      $('.viewCharities').on('click', function() {
-          d.width = "300px";
-          d.height = "300px";
-          $('.charity').css("height", "300px");
-          $(this).parent().css("position","");
-          $(this).parent().animate(d, speed, function() {
-            $('.charity').each(function() {
-              if($(this)[0] !== $(thisCharity)[0]) {
-                $(this).fadeIn('fast');
-              }
-            });
-          });
-          full = false;
-      });
+    //   var thisCharity = $(this).parent();
+    //   console.log($(thisCharity)[0]);
+    //   if(!full) {
+    //     $('.charity').each(function() {
+    //       if($(this)[0] !== $(thisCharity)[0]){
+    //         $(this).hide();
+    //       }
+    //     });
+    //     d.height = "80vh";
+    //     d.width = "80vw";
+    //     $(this).parent().animate(d, speed, function(){
+    //
+    //     });
+    //     full=true;
+    //   } else {
+    //     d.width = "300px";
+    //     d.height = "300px";
+    //     $(this).parent().css("position","");
+    //     $(this).parent().animate(d, speed, function() {
+    //       $('.charity').each(function() {
+    //         if($(this)[0] !== $(thisCharity)[0]) {
+    //           $(this).fadeIn('fast');
+    //         }
+    //       });
+    //     });
+    //     full = false;
+    //   }
+    //   $('.viewCards').click(function() {
+    //     $('.cards').animate({
+    //       left: '0'
+    //     }, 500);
+    //     $('.charity-list').animate({
+    //       left: '200%'
+    //     }, 500);
+    //     $('.home').css("left", "200%");
+    //   });
+    //
+    //   $('.viewCharities').on('click', function() {
+    //       d.width = "300px";
+    //       d.height = "300px";
+    //       $('.charity').css("height", "300px");
+    //       $(this).parent().css("position","");
+    //       $(this).parent().animate(d, speed, function() {
+    //         $('.charity').each(function() {
+    //           if($(this)[0] !== $(thisCharity)[0]) {
+    //             $(this).fadeIn('fast');
+    //           }
+    //         });
+    //       });
+    //       full = false;
+    //   });
+      full = charityAnimate(full, d, speed, thisCharity);
     });
     $('.picture>img').on('click', function() {
       var thisPic = $(this).parent();
@@ -180,5 +251,5 @@ $(function() {
           full = false;
       });
     });
-  }, 1500);
+  }, 3000);
 });
