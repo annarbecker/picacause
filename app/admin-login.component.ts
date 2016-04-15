@@ -10,9 +10,11 @@ import {NewCharityComponent} from './new-charity.component';
     <div class="login">
       <h3>Apply to be Added to our List of Charities</h3>
       <new-charity (onSubmitNewCharity)="createCharity($event)"></new-charity>
+      <br>
+      <br>
       <h4>Admin Login</h4>
-      <input placeholder="username" #adminUsername>
-      <input placeholder="password" type="password" #adminPassword>
+      <input placeholder="username" class="form-control" #adminUsername><br>
+      <input placeholder="password" type="password" class="form-control" #adminPassword>
       <button (click)="loginAdmin(adminUsername, adminPassword)">Go!</button>
     </div>
     <div class="userNotFound">
@@ -26,9 +28,13 @@ import {NewCharityComponent} from './new-charity.component';
       <br>
       <h4>Charity Applications:</h4>
       <div *ngFor="#currentCharityRequest of charityRequestList">
-        <p (click)="selectCharityRequest(currentCharity)" class="charityRequest">{{currentCharityRequest.name}} <span class="approve" (click)="approveCharityRequest(currentCharityRequest)">&#x02713;</span>  <span class="reject" (click)="rejectCharityRequest(currentCharityRequest)">&#x02717;</span></p>
+        <p (click)="selectCharityRequest(currentCharityRequest)" class="charityRequest">{{currentCharityRequest.name}} <span class="approve" (click)="approveCharityRequest(currentCharityRequest)">&#x02713;</span>  <span class="reject" (click)="rejectCharityRequest(currentCharityRequest)">&#x02717;</span></p>
         <div *ngIf="currentCharityRequest === selectedCharityRequest">
-
+          <p><strong>Mission: </strong>{{currentCharityRequest.mission}}</p>
+          <p><strong>Category: </strong>{{currentCharityRequest.category}}</p>
+          <p><strong>Goal: </strong>{{currentCharityRequest.goal}}</p>
+          <p><strong>Contact Info: </strong>{{currentCharityRequest.contact}}</p>
+          <p><img src={{currentCharityRequest.image}}></p>
         </div>
       </div>
       <br>
@@ -49,6 +55,7 @@ export class AdminLoginComponent {
   public charityRequestList = [];
   public onSubmitNewCharity: EventEmitter<any>;
   public currentAdmin: string;
+  public selectedCharityRequest = undefined;
 
   constructor() {
     this.onSubmitNewCharity = new EventEmitter();
@@ -148,5 +155,15 @@ export class AdminLoginComponent {
       charityRequestKey = snapshot.key();
     });
     charityRequestRef.child(charityRequestKey).remove();
+  }
+
+  selectCharityRequest(charityRequest) {
+    if(this.selectedCharityRequest) {
+      this.selectedCharityRequest = undefined;
+      console.log('its broken');
+    } else {
+      this.selectedCharityRequest = charityRequest
+      console.log(charityRequest);
+    }
   }
 }

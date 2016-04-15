@@ -5,18 +5,18 @@ import { Charity } from './charity.model';
   selector: 'new-charity',
   outputs: ['onSubmitNewCharity'],
   template:`
-    <input placeholder="Name" #newName><br>
-    <input placeholder="Mission Statement" #newMission><br>
-    <input placeholder="Image" #newImage><br>
-    <input placeholder="Contact Email" #newContact><br>
-    <input placeholder="Fundraising Goal" #newGoal><br>
-    <select #newCategory>
+    <input placeholder="Name" class="input-lg form-control" #newName><br>
+    <input placeholder="Mission Statement" class="input-lg form-control" #newMission><br>
+    <input placeholder="Image" class="input-lg form-control" #newImage><br>
+    <input placeholder="Contact Email" class="input-lg form-control" #newContact><br>
+    <input placeholder="Fundraising Goal" class="input-lg form-control" #newGoal><br>
+    <select class="form-control" #newCategory>
       <option value="youth">Youth Development</option>
       <option value="animals">Animals</option>
       <option value="community">Community</option>
       <option value="enviornment">Environment</option>
     </select><br>
-    <input placeholder="Desired photo hashtags" #newHashtag><br>
+    <input placeholder="Desired photo hashtags" class="input-lg form-control" #newHashtag><br>
     <button class="newCharityListSlide" (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCategory, newHashtag)">Apply</button>
   `
 })
