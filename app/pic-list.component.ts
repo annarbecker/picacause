@@ -15,7 +15,7 @@ import {PicDetailsComponent} from './pic-details.component'
       Instagram Login
     </a>
   </button>
-  <button (click)="signOut()"><a href="/">Instagram Logout</a></button>
+  <a href="/"><button (click)="signOut()">Instagram Logout</button></a>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
@@ -47,7 +47,7 @@ export class PicListComponent {
   }
 
   getPics() {
-    return this.http.get('https://api.instagram.com/v1/users/self/media/recent?' + this.token).map((res:Response) => res.json()).subscribe(
+    return this.http.get('https://api.instagram.com/v1/users/self/media/recent?' + this.token + '&count=18').map((res:Response) => res.json()).subscribe(
       // the first argument is a function which runs on success
       data => { this.pics = data.data},
       // the second argument is a function which runs on error
