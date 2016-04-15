@@ -10,8 +10,12 @@ import {PicDetailsComponent} from './pic-details.component'
   directives: [PicDetailsComponent],
   template: `
   <h2>API test</h2>
-  <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
-  <a (click)="signOut()" target="blank" href="https://instagram.com/accounts/logout/">Instagram Logout</a>
+  <button>
+    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">
+      Instagram Login
+    </a>
+  </button>
+  <button (click)="signOut()"><a href="#">Instagram Logout</a></button>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
@@ -76,6 +80,14 @@ export class PicListComponent {
   }
 
   signOut() {
+    var a = document.createElement("a");
+    a.href = "https://instagram.com/accounts/logout/";
+    var evt = document.createEvent("MouseEvents");
+    //the tenth parameter of initMouseEvent sets ctrl key
+    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
+                                true, false, false, false, 0, null);
+    a.dispatchEvent(evt);
+
     location.reload();
   }
 }
