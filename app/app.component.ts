@@ -10,80 +10,108 @@ import {svgCameraComponent} from './svg-camera.component';
 import {CartComponent} from './cart.component';
 import {Card} from './card.model';
 import {AdminLoginComponent} from './admin-login.component';
+import {ContactComponent} from './contact.component';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent],
+  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent, ContactComponent],
   template: `
-
   <header>
-    <div class="container header">
-      <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
-      <div class="navvy">
-        <ul>
-          <li><a class="homeSlide" href="#">home</a></li>
-          <li><a data-toggle="modal" data-target="#myModal">about</a></li>
-          <li><a href="#">contact</a></li>
-          <li><a class="adminFade" href="#">apply</a></li>
-        </ul>
-        <a href="#" class="homeCartShow nav-cart-icon">
-          <svg-cart class=svgCart></svg-cart>
-          <p id="cart-count">{{cartCount}}</p>
-          <p id="open-cart-hover">open cart</p>
-        </a>
+    <div class="container">
+      <div class="header">
+        <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
+
+  <!-- ••••• Nav Bar ••••• -->
+        <div class="navvy">
+          <ul>
+            <li><a class="homeSlide" href="#">home</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">about</a></li>
+            <li><a href="#" class="contactFade">contact</a></li>
+            <li><a class="adminFade" href="#">apply</a></li>
+          </ul>
+          <a href="#" class="homeCartShow nav-cart-icon">
+            <svg-cart class=svgCart></svg-cart>
+            <p id="cart-count">{{cartCount}}</p>
+            <p id="open-cart-hover">open cart</p>
+          </a>
+        </div>
+
+  <!-- ••••• Nav Bar Collapse ••••• -->
+        <div class="nav-collapse">
+          <span class="nav-collapse-icon">&equiv;</span>
+          <ul class="nav-collapse-dropdown">
+            <li class="homeSlide">home</li>
+            <li>about</li>
+            <li class="contactFade">contact</li>
+            <li class="adminFade">apply</li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">
+            <h1>Welcome to Pic-A-Cause!</h1>
+            <p>We host fund-raising campaigns for charities, selling prints photographed by supporters through instagram.</p>
+          </div>
+        </div>
+        <div *ngIf="state === 'transition'" class="modal-body">
+          <div class="mission row">
+            <h4>Getting Involved</h4>
+            <p>Support charities in your area by hashtagging instagram photos to benefit one of picacause's hosted charities. Tagged photos are posted for sale in our gallery and 100% of the proceeds benefit the charity of the supporter's choice. If you're a charitable organization, apply to be a featured charity on the site and lower the barrier to contribution for your organization. Picacause makes it easy for new, young, and creative supporters to get involved in your cause!</p>
+          </div>
+          <div class="mission row">
+            <h4>Navigating the App</h4>
+            <div class="col col-left col-xs-6">
+              <svg-camera class=svgCamera></svg-camera>
+              <p>Buy a print</p>
+            </div>
+            <div class="col col-right col-xs-6">
+              <svg-heart class=svgHeart></svg-heart>
+              <p>Support a charity</p>
+            </div>
+          </div>
+        </div>
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          <h1>Welcome to Pic-A-Cause!</h1>
-          <p>We host fund-raising campaigns for charities, selling prints photographed by supporters through instagram.</p>
+        <div *ngIf="state === 'logout'" class="modal-body instagram">
+          <h4>You've successfully logged out of Instagram</h4>
         </div>
-      </div>
-      <div class="modal-body">
-        <div class="mission row">
-          <h4>Getting Involved</h4>
-          <p>Support your charity by hashtagging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
-        </div>
-        <div class="mission row">
-          <h4>Navigating the App</h4>
-          <div class="col col-left col-xs-6">
-            <svg-camera class=svgCamera></svg-camera>
-            <p>Buy a print</p>
-          </div>
-          <div class="col col-right col-xs-6">
-            <svg-heart class=svgHeart></svg-heart>
-            <p>Support a charity</p>
-          </div>
+
+        <div *ngIf="state === 'login'" class="modal-body instagram">
+          <h4>You've successfully logged in to Instagram</h4>
         </div>
       </div>
     </div>
-
   </div>
-</div>
   <section>
+
+  <!-- ••••• Home Page ••••• -->
     <div class="home">
       <div class="homeCardsSlide">
-        <div class="home-icon">
-          <svg-camera class=svgCamera></svg-camera>
-          <h4 class="home-icon-title">go to photos</h4>
+        <div class="home-to-pics">
+          <div class="home-icon">
+            <svg-camera class=svgCamera></svg-camera>
+            <h4 class="home-icon-title">go to photos</h4>
+          </div>
         </div>
       </div>
       <div class="homeNewCharitySlide">
-      <div class="home-icon">
-        <svg-heart class=svgHeart></svg-heart>
-        <h4 class="home-icon-title">go to charities</h4>
+        <div class="home-to-charities">
+          <div class="home-icon">
+            <svg-heart class=svgHeart></svg-heart>
+            <h4 class="home-icon-title">go to charities</h4>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
 
+  <!-- ••••• Charities Page ••••• -->
     <div class="charity-list">
       <charity-list></charity-list>
     </div>
@@ -97,6 +125,9 @@ import {AdminLoginComponent} from './admin-login.component';
     <div class="cart">
       <cart [cart]="cart" (onCheckout)="clearCart($event)"></cart>
     </div>
+    <div class="contact">
+      <contact></contact>
+    </div>
     <div class="apply">
       <admin-login (onSubmitNewCharity)="createCharityApplication($event)"></admin-login>
     </div>
@@ -105,6 +136,7 @@ import {AdminLoginComponent} from './admin-login.component';
 })
 
 export class AppComponent {
+  public state = "";
   public pics = [];
   public cart = [];
   public cartCount = 0;
@@ -112,9 +144,24 @@ export class AppComponent {
 
   constructor() {}
 
+  ngOnInit() {
+    console.log(window.location.href.length);
+    console.log(window.location.href);
+    var userToken = window.location.href;
+
+    if (window.location.href.length === 22) {
+      this.state = "logout";
+      console.log(this.state);
+    } else if (window.location.href.length > 30) {
+      this.state = "login";
+      console.log(this.state);
+    } else {
+      this.state = "transition";
+      console.log(this.state);
+    }
+  }
+
   addToCart(clickedPic) {
-    console.log('it works');
-    console.log(clickedPic);
     this.cart.push(new Card(clickedPic[0].images.standard_resolution.url, clickedPic[0].user.username, "", "", 5, clickedPic[1]));
     console.log(this.cart);
     return this.cartCount = this.cart.length;
@@ -122,7 +169,6 @@ export class AppComponent {
 
   createUser(userArray: Array<any>) {
     var usersRef = this.myDataRef.child("users");
-    console.log('it works');
     usersRef.push({
       username: userArray[0],
       password: userArray[1]

@@ -21,16 +21,16 @@
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  // -webkit-transform: translate3d(0, -300px, 0);
-  // transform: translate3d(0, -300px, 0);
   opacity: 1;
+  .modal-content {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 }
 
 .modal-header {
   background-color: #FFDA7A;
   border: 10px solid #FFBE14;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   .modal-title {
     text-align: center;
     h1 {
@@ -52,6 +52,11 @@
     padding-right: 20px;
     text-align: center;
     padding: 10px;
+    p {
+      width: 80%;
+      display: block;
+      margin: auto;
+    }
     h4 {
       margin-bottom: 20px;
     }
@@ -78,5 +83,11 @@
       height: 5rem;
       width: auto;
     }
+  }
+}
+
+.instagram {
+  h4 {
+    text-align: center;
   }
 }

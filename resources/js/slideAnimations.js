@@ -76,6 +76,15 @@ $(function() {
         left: '200%'
       }, 500);
     });
+    // REPEATED IN ORDER TO TARGET BY ID - ASK TYLER
+    $('#homeCardsSlide').click(function() {
+      $('.cards').animate({
+        left: '0'
+      }, 500);
+      $('.home').animate({
+        left: '200%'
+      }, 500);
+    });
     $('.homeSlide').click(function() {
       var time;
       if ($('.home').css('display') === 'none') {
@@ -125,6 +134,12 @@ $(function() {
           full = charityAnimate(full, d, speed, thisCharity);
         });
       });
+    });
+    $('.contactFade').click(function() {
+      $('.contact').fadeIn(500);
+      $('.home').fadeOut();
+      $('.charity-list').fadeOut();
+      $('.cards').fadeOut();
     });
     $('.adminFade').click(function() {
       $('.apply').fadeIn(500);

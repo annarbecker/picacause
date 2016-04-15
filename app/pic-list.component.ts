@@ -10,8 +10,12 @@ import {PicDetailsComponent} from './pic-details.component'
   directives: [PicDetailsComponent],
   template: `
   <h2>API test</h2>
-  <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">Instagram Login</a>
-  <a (click)="signOut()" target="blank" href="https://instagram.com/accounts/logout/">Instagram Logout</a>
+  <button>
+    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">
+      Instagram Login
+    </a>
+  </button>
+  <a href="/"><button (click)="signOut()">Instagram Logout</button></a>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
@@ -34,18 +38,16 @@ export class PicListComponent {
   }
 
   ngOnInit() {
-    console.log(window.location.href);
     var userToken = window.location.href;
     if (window.location.href.length > 25) {
       this.token = userToken.slice(23);
     }
-    console.log(this.token);
 
     this.getPics();
   }
 
   getPics() {
-    return this.http.get('https://api.instagram.com/v1/users/self/media/recent?' + this.token).map((res:Response) => res.json()).subscribe(
+    return this.http.get('https://api.instagram.com/v1/users/self/media/recent?' + this.token + '&count=18').map((res:Response) => res.json()).subscribe(
       // the first argument is a function which runs on success
       data => { this.pics = data.data},
       // the second argument is a function which runs on error
@@ -76,6 +78,14 @@ export class PicListComponent {
   }
 
   signOut() {
+    var a = document.createElement("a");
+    a.href = "https://instagram.com/accounts/logout/";
+    var evt = document.createEvent("MouseEvents");
+    //the tenth parameter of initMouseEvent sets ctrl key
+    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
+                                true, false, false, false, 0, null);
+    a.dispatchEvent(evt);
+
     location.reload();
   }
 }
