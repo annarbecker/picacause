@@ -15,7 +15,7 @@ import {PicDetailsComponent} from './pic-details.component'
       Instagram Login
     </a>
   </button>
-  <button (click)="signOut()"><a href="#">Instagram Logout</a></button>
+  <button (click)="signOut()"><a href="/">Instagram Logout</a></button>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
       <img src="{{currentPic.images.standard_resolution.url}}" (click)="picClicked(currentPic)" class="picImage">
@@ -38,12 +38,10 @@ export class PicListComponent {
   }
 
   ngOnInit() {
-    console.log(window.location.href);
     var userToken = window.location.href;
     if (window.location.href.length > 25) {
       this.token = userToken.slice(23);
     }
-    console.log(this.token);
 
     this.getPics();
   }

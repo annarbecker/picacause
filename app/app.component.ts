@@ -18,7 +18,7 @@ import {AdminLoginComponent} from './admin-login.component';
 
   <header>
     <div class="container header">
-      <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
+      <a class="logo homeSlide" href="#"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></a>
       <div class="navvy">
         <ul>
           <li><a class="homeSlide" href="#">home</a></li>
@@ -35,39 +35,48 @@ import {AdminLoginComponent} from './admin-login.component';
     </div>
   </header>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          <h1>Welcome to Pic-A-Cause!</h1>
-          <p>We host fund-raising campaigns for charities, selling prints photographed by supporters through instagram.</p>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="mission row">
-          <h4>Getting Involved</h4>
-          <p>Support your charity by hashtagging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
-        </div>
-        <div class="mission row">
-          <h4>Navigating the App</h4>
-          <div class="col col-left col-xs-6">
-            <svg-camera class=svgCamera></svg-camera>
-            <p>Buy a print</p>
-          </div>
-          <div class="col col-right col-xs-6">
-            <svg-heart class=svgHeart></svg-heart>
-            <p>Support a charity</p>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">
+            <h1>Welcome to Pic-A-Cause!</h1>
+            <p>We host fund-raising campaigns for charities, selling prints photographed by supporters through instagram.</p>
           </div>
         </div>
+        <div *ngIf="state === 'transition'" class="modal-body">
+          <div class="mission row">
+            <h4>Getting Involved</h4>
+            <p>Support your charity by hashtagging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
+          </div>
+          <div class="mission row">
+            <h4>Navigating the App</h4>
+            <div class="col col-left col-xs-6">
+              <svg-camera class=svgCamera></svg-camera>
+              <p>Buy a print</p>
+            </div>
+            <div class="col col-right col-xs-6">
+              <svg-heart class=svgHeart></svg-heart>
+              <p>Support a charity</p>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="state === 'logout'" class="modal-body instagram">
+          <h4>You've successfully logged out of Instagram</h4>
+        </div>
+
+        <div *ngIf="state === 'login'" class="modal-body instagram">
+          <h4>You've successfully logged in to Instagram</h4>
+        </div>
+
       </div>
+
     </div>
-
   </div>
-</div>
   <section>
     <div class="home">
       <div class="homeCardsSlide">
@@ -105,6 +114,7 @@ import {AdminLoginComponent} from './admin-login.component';
 })
 
 export class AppComponent {
+  public state = "";
   public pics = [];
   public cart = [];
   public cartCount = 0;
@@ -112,9 +122,24 @@ export class AppComponent {
 
   constructor() {}
 
+  ngOnInit() {
+    console.log(window.location.href.length);
+    console.log(window.location.href);
+    var userToken = window.location.href;
+
+    if (window.location.href.length === 22) {
+      this.state = "logout";
+      console.log(this.state);
+    } else if (window.location.href.length > 30) {
+      this.state = "login";
+      console.log(this.state);
+    } else {
+      this.state = "transition";
+      console.log(this.state);
+    }
+  }
+
   addToCart(clickedPic) {
-    console.log('it works');
-    console.log(clickedPic);
     this.cart.push(new Card(clickedPic[0].images.standard_resolution.url, clickedPic[0].user.username, "", "", 5, clickedPic[1]));
     console.log(this.cart);
     return this.cartCount = this.cart.length;
@@ -122,7 +147,6 @@ export class AppComponent {
 
   createUser(userArray: Array<any>) {
     var usersRef = this.myDataRef.child("users");
-    console.log('it works');
     usersRef.push({
       username: userArray[0],
       password: userArray[1]
