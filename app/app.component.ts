@@ -10,10 +10,11 @@ import {svgCameraComponent} from './svg-camera.component';
 import {CartComponent} from './cart.component';
 import {Card} from './card.model';
 import {AdminLoginComponent} from './admin-login.component';
+import {ContactComponent} from './contact.component';
 
 @Component({
   selector: 'my-app',
-  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent],
+  directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent, ContactComponent],
   template: `
 
   <header>
@@ -23,7 +24,7 @@ import {AdminLoginComponent} from './admin-login.component';
         <ul>
           <li><a class="homeSlide" href="#">home</a></li>
           <li><a data-toggle="modal" data-target="#myModal">about</a></li>
-          <li><a href="#">contact</a></li>
+          <li><a href="#" class="contactFade">contact</a></li>
           <li><a class="adminFade" href="#">apply</a></li>
         </ul>
         <a href="#" class="homeCartShow nav-cart-icon">
@@ -96,6 +97,9 @@ import {AdminLoginComponent} from './admin-login.component';
     </div>
     <div class="cart">
       <cart [cart]="cart" (onCheckout)="clearCart($event)"></cart>
+    </div>
+    <div class="contact">
+      <contact></contact>
     </div>
     <div class="apply">
       <admin-login (onSubmitNewCharity)="createCharityApplication($event)"></admin-login>

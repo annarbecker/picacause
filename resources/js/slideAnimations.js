@@ -63,6 +63,12 @@ $(function() {
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
     });
+    $('.contactFade').click(function() {
+      $('.contact').fadeIn(500);
+      $('.home').fadeOut();
+      $('.charity-list').fadeOut();
+      $('.cards').fadeOut();
+    });
     $('.adminFade').click(function() {
       $('.apply').fadeIn(500);
       $('.home').fadeOut();
