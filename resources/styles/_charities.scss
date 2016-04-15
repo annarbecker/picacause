@@ -28,15 +28,12 @@ charity-list {
 .secured-metrics {
   display: flex;
   align-items: center;
-  height: 6rem;
+  height: 3.5rem;
   width: 100%;
   background-color: $color-yellow-main;
   border: 0.5rem solid darken($color-yellow-main, 20%);
 }
 .amount-secured {
   background-color: purple;
-  height: 100%;
-}
-.amount-desired {
   height: 100%;
 }
