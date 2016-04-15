@@ -9,22 +9,24 @@ import { Charity } from './charity.model';
   template: `
   <div class="charityGuts">
     <p class="charityHeader">Mission</p>
-    <p>{{charity.mission}}</p>
+    <p>{{charity.mission}}<a href="{{charity.hashtag}}" target="blank"> Learn More</a></p>
     <p class="charityHeader">Contact</p>
     <p>{{charity.contact}}<p>
     <p class="charityHeader">Category</p>
     <p>{{charity.category}}<p>
     <p class="charityHeader">Goal</p>
     <p>\${{charity.goal}}.00<p>
-    <a class="charityHeader" href="{{charity.hashtag}}" target="blank">Learn More</a>
-    <button>Support {{charity.name}}</button>
     <p>Amount Raised</p>
     <div class="secured-bar">
       <div class="secured-metrics">
         <div class="amount-secured">
         </div>
-        <!-- ".amount-desired" Intentionally Removed DD-->
       </div>
+      <div class="amount-desired">
+      </div>
+    </div>
+    <div class="checkoutBtns">
+      <button class="viewCards">support {{charity.name}}</button>
     </div>
   </div>
   `

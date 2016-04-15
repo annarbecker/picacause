@@ -97,6 +97,30 @@ $(function() {
         });
         full = false;
       }
+      $('.viewCards').click(function() {
+        $('.cards').animate({
+          left: '0'
+        }, 500);
+        $('.charity-list').animate({
+          left: '200%'
+        }, 500);
+        $('.home').css("left", "200%");
+      });
+
+      $('.viewCharities').on('click', function() {
+          d.width = "300px";
+          d.height = "300px";
+          $('.charity').css("height", "300px");
+          $(this).parent().css("position","");
+          $(this).parent().animate(d, speed, function() {
+            $('.charity').each(function() {
+              if($(this)[0] !== $(thisCharity)[0]) {
+                $(this).fadeIn('fast');
+              }
+            });
+          });
+          full = false;
+      });
     });
     $('.picture>img').on('click', function() {
       var thisPic = $(this).parent();

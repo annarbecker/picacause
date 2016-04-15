@@ -32,7 +32,10 @@ Install Firebase
 $ npm install tsd -g
 $ tsd install firebase
 ```
-
+Install jQuery
+```
+$ tsd install jquery
+```
 Install globals if needed (gulp, bower, sass, typescript, typescript packages.)
 ```
 $ npm install gulp -g
