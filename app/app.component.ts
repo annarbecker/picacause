@@ -16,29 +16,31 @@ import {AdminLoginComponent} from './admin-login.component';
   directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent],
   template: `
   <header>
-    <div class="container header">
-      <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
-      <div class="navvy">
-        <ul>
-          <li><a class="homeSlide" href="#">home</a></li>
-          <li><a data-toggle="modal" data-target="#myModal">about</a></li>
-          <li><a href="#">contact</a></li>
-          <li><a class="adminFade" href="#">apply</a></li>
-        </ul>
-        <a href="#" class="homeCartShow nav-cart-icon">
-          <svg-cart class=svgCart></svg-cart>
-          <p id="cart-count">{{cartCount}}</p>
-          <p id="open-cart-hover">open cart</p>
-        </a>
-      </div>
-      <div class="nav-collapse">
-        <span class="nav-collapse-icon">&equiv;</span>
-        <ul class="nav-collapse-dropdown">
-          <li>home</li>
-          <li>about</li>
-          <li>contact</li>
-          <li>apply</li>
-        </ul>
+    <div class="container">
+      <div class="header">
+        <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
+        <div class="navvy">
+          <ul>
+            <li><a class="homeSlide" href="#">home</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">about</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a class="adminFade" href="#">apply</a></li>
+          </ul>
+          <a href="#" class="homeCartShow nav-cart-icon">
+            <svg-cart class=svgCart></svg-cart>
+            <p id="cart-count">{{cartCount}}</p>
+            <p id="open-cart-hover">open cart</p>
+          </a>
+        </div>
+        <div class="nav-collapse">
+          <span class="nav-collapse-icon">&equiv;</span>
+          <ul class="nav-collapse-dropdown">
+            <li class="homeSlide">home</li>
+            <li>about</li>
+            <li>contact</li>
+            <li class="adminFade">apply</li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -79,18 +81,22 @@ import {AdminLoginComponent} from './admin-login.component';
   <section>
     <div class="home">
       <div class="homeCardsSlide">
-        <div class="home-icon">
-          <svg-camera class=svgCamera></svg-camera>
-          <h4 class="home-icon-title">go to photos</h4>
+        <div class="home-to-pics">
+          <div class="home-icon">
+            <svg-camera class=svgCamera></svg-camera>
+            <h4 class="home-icon-title">go to photos</h4>
+          </div>
         </div>
       </div>
       <div class="homeNewCharitySlide">
-      <div class="home-icon">
-        <svg-heart class=svgHeart></svg-heart>
-        <h4 class="home-icon-title">go to charities</h4>
+        <div class="home-to-charities">
+          <div class="home-icon">
+            <svg-heart class=svgHeart></svg-heart>
+            <h4 class="home-icon-title">go to charities</h4>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
 
     <div class="charity-list">
       <charity-list></charity-list>

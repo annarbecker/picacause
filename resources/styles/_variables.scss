@@ -2,3 +2,8 @@ $screen-small: "(min-width: 380px) and (max-width: 500px)";
 $transition-quick: all 0.25s ease-in-out;
 
 $color-yellow-main: #ffda7a;
+$color-yellow-dark: darken($color-yellow-main, 20%);
+
+
+$test-border-blue: 1px solid blue;
+$test-border-red: 1px solid red;

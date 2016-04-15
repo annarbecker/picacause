@@ -69,7 +69,7 @@ footer {
 
 
 //•••••• HOME PAGE •••••••
-.homeNewCharitySlide {
+.home-to-charities {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -114,8 +114,11 @@ footer {
     height: 1rem;
   }
 }
-
-.homeCardsSlide {
+.homeCardsSlide, .homeNewCharitySlide{
+  display: flex;
+  width: 100%;
+}
+.home-to-pics {
   display: flex;
   flex-direction: column;
   justify-content: center;
