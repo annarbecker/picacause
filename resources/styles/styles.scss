@@ -73,7 +73,33 @@ footer {
 
 
 //•••••• HOME PAGE •••••••
-.homeNewCharitySlide {
+.home {
+  @media #{$screen-small} {
+    height: 50vh;
+    flex: 1 1 100%;
+    flex-direction: column;
+    .home-to-charities, .home-to-pics {
+      height: 50vh;
+      flex: 1 1 100%;
+      &:hover {
+        height: calc(50vh + 2rem);
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+}
+
+//.homeCardsSlide contains the turquoise colored, "go to photos" slab
+//.homeNewCharitySlide contains the salmon colored, "go to photos" slab
+//Both classes reference jQuery page slide animations
+.homeCardsSlide, .homeNewCharitySlide {
+  display: flex;
+  width: 100%;
+}
+
+// Wrapper inside .homeNewCharitySlide <div>
+.home-to-charities {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -92,34 +118,9 @@ footer {
     }
   }
 }
-.home-icon-title {
-  opacity: 0;
-  color: white;
-  transition: $transition-quick;
-}
-.home-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 6rem;
-  transition: $transition-quick;
-  svg {
-    height: 6rem;
-    path {
-      fill: #FFFFFF;
-    }
-  }
-}
 
-.home-cart-icon {
-  height: 1rem;
-  img {
-    height: 1rem;
-  }
-}
-
-.homeCardsSlide {
+// Wrapper inside .homeCardsSlide <div>
+.home-to-pics {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,6 +135,28 @@ footer {
     transform: translate(0, -1rem);
     .home-icon-title {
       opacity: 1;
+    }
+
+  }
+}
+//Title Beneath Camera or Heart Icons
+.home-icon-title {
+  opacity: 0;
+  color: white;
+  transition: $transition-quick;
+}
+//Camera or Heart Icons
+.home-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  transition: $transition-quick;
+  svg {
+    height: 6rem;
+    path {
+      fill: #FFFFFF;
     }
   }
 }
@@ -183,7 +206,6 @@ footer {
 //•••••• CHARITY •••••••
 
 .charityList {
-  // position: relative;
   left: 0;
   right: 0;
   top: 100;
@@ -206,26 +228,28 @@ footer {
 
 //•••••• HOME PAGE •••••••
 
-.cart {
-  display: none;
-}
+// !!!ATTN!!! Are the following .cart, .shoppingCart, and .checkOutBtns rules in use?
 
-.shoppingCart {
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  img {
-    height: 100px;
-    width: 100px;
-    margin: 3px;
-  }
-}
-
-.checkoutBtns {
-  display: flex;
-}
+// .cart {
+//   display: none;
+// }
+//
+// .shoppingCart {
+//   margin: 1rem;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+//   img {
+//     height: 100px;
+//     width: 100px;
+//     margin: 3px;
+//   }
+// }
+//
+// .checkoutBtns {
+//   display: flex;
+// }
 
 //•••••• PICTURES •••••••
 
