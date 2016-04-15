@@ -28,7 +28,6 @@ $(function() {
         left: '200%'
       }, 500);
     });
-    console.log($('.home').css('display'));
     $('.homeSlide').click(function() {
       var time;
       if ($('.home').css('display') === 'none') {
