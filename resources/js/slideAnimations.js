@@ -119,7 +119,7 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
-      $('.checkout').click(function() {
+      $('.homeSlide').click(function() {
         $('.charity>img').on('click', function() {
           var thisCharity = $(this).parent();
           full = charityAnimate(full, d, speed, thisCharity);
@@ -131,6 +131,12 @@ $(function() {
       $('.home').fadeOut();
       $('.charity-list').fadeOut();
       $('.cards').fadeOut();
+      $('.homeSlide').click(function() {
+        $('.charity>img').on('click', function() {
+          var thisCharity = $(this).parent();
+          full = charityAnimate(full, d, speed, thisCharity);
+        });
+      });
     });
     $('.charity>img').on('click', function() {
       var thisCharity = $(this).parent();

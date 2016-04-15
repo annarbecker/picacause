@@ -17,7 +17,7 @@ import { Charity } from './charity.model';
       <option value="enviornment">Environment</option>
     </select><br>
     <input placeholder="Desired photo hashtags" class="input-lg form-control" #newHashtag><br>
-    <button class="newCharityListSlide" (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCategory, newHashtag)">Apply</button>
+    <button class="charityApply" (click)="addCharity(newName, newMission, newImage, newContact, newGoal, newCategory, newHashtag)">Apply</button>
   `
 })
 
