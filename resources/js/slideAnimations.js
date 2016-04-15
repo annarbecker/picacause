@@ -19,6 +19,15 @@ $(function() {
         left: '200%'
       }, 500);
     });
+    // REPEATED IN ORDER TO TARGET BY ID - ASK TYLER
+    $('#homeCardsSlide').click(function() {
+      $('.cards').animate({
+        left: '0'
+      }, 500);
+      $('.home').animate({
+        left: '200%'
+      }, 500);
+    });
     $('.homeSlide').click(function() {
       var time;
       if ($('.home').css('display') === 'none') {
