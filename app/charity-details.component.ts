@@ -14,12 +14,13 @@ import { Charity } from './charity.model';
     <p>{{charity.contact}}<p>
     <p class="charityHeader">Category</p>
     <p>{{charity.category}}<p>
-    <p class="charityHeader">Amount Raised</p>
-    <p>\${{charity.secured}}.00</p>
-    <p class="charityHeader">goal</p>
-    <p> \${{charity.goal}}.00</p>
-    <div class="secured-metrics">
-      <div class="amount-secured">
+    <p class="charityHeader">Goal</p>
+    <p>\${{charity.goal}}.00<p>
+    <p>Amount Raised</p>
+    <div class="secured-bar">
+      <div class="secured-metrics">
+        <div class="amount-secured">
+        </div>
       </div>
       <div class="amount-desired">
       </div>

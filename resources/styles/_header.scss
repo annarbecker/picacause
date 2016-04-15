@@ -3,23 +3,28 @@
 header {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
+  justify-content: space-between;
   background: $color-yellow-main;
-  background-repeat: repeat;
-  background-blend-mode: multiply;
   width: 100%;
-  border-bottom: 1rem solid darken($color-yellow-main, 20%);
+  border-bottom: 1rem solid $color-yellow-dark;
   height: 8rem;
 }
 .container {
   padding: 0;
+  // border: 1px solid pink;
+  @media #{$screen-small} {
+    width: 80%;
+  }
 }
 .logo {
+  // border: 1px solid red;
+  display: flex;
+  align-items: center;
   margin: 0;
   font-weight: bolder;
   font-size: 2rem;
   color: navy;
-  flex: 1;
+  // flex: 1;
   transition: $transition-quick;
   .logo-medblue {
     color: lighten(navy, 50%);
@@ -37,7 +42,8 @@ header {
 }
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;;
+  width: 100%;
 }
 .navvy {
   display: flex;
@@ -51,7 +57,7 @@ header {
   ul {
     flex: 1;
     display: flex;
-
+    margin: 0;
     justify-content: space-between;
     width: 60%;
     align-items: center;
@@ -103,4 +109,56 @@ header {
       }
     }
   }
+}
+.nav-collapse {
+  transition: $transition-quick;
+  .nav-collapse-icon {
+    transition: $transition-quick;
+    display: flex;
+    align-items: center;
+    font-size: 6rem;
+    display: none;
+    text-align: right;
+    flex: 1;
+    width: 10rem;
+    // border: $test-border-blue;
+    @media #{$screen-small} {
+      display: inline-block;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    .nav-collapse-dropdown {
+      display: block;
+      opacity: 1;
+      top: 7.9rem;
+      z-index: 1;
+      position: absolute;
+    }
+  }
+  .nav-collapse-dropdown {
+    transition: $transition-quick;
+    position: absolute;
+    left: 0;
+    top: 15rem;
+    z-index: -1;
+    // display: none;
+    opacity: 0;
+    width: 100%;
+    background-color: $color-yellow-main;
+    // border: 5px solid $color-yellow-dark;
+    li {
+      padding: 1rem;
+      border-top: 5px solid $color-yellow-dark;
+      width: 100%;
+      text-align: center;
+      &:hover {
+        background-color: darken($color-yellow-main, 5%);
+      }
+      &:first-of-type {
+        border-top: none;
+      }
+    }
+  }
+
 }
