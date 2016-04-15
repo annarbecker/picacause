@@ -51,7 +51,7 @@ import {ContactComponent} from './contact.component';
       <div class="modal-body">
         <div class="mission row">
           <h4>Getting Involved</h4>
-          <p>Support your charity by hashtagging photos for one of our hosted charities in order to post them for sale in our gallery. Or, if you're a charity, lower the barrier of contribution to your organization by getting new, young, and creative supporters involved in your cause!</p>
+          <p>Support charities in your area by hashtagging instagram photos to benefit one of picacause's hosted charities. Tagged photos are posted for sale in our gallery and 100% of the proceeds benefit the charity of the supporter's choice. If you're a charitable organization, apply to be a featured charity on the site and lower the barrier to contribution for your organization. Picacause makes it easy for new, young, and creative supporters to get involved in your cause!</p>
         </div>
         <div class="mission row">
           <h4>Navigating the App</h4>
