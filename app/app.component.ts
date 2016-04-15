@@ -17,20 +17,7 @@ import {ContactComponent} from './contact.component';
   directives: [CharityListComponent, PicListComponent, CartComponent, SignUpComponent, svgCartComponent, svgHeartComponent, svgCameraComponent, AdminLoginComponent, ContactComponent],
   template: `
   <header>
-    <div class="container header">
-      <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
-      <div class="navvy">
-        <ul>
-          <li><a class="homeSlide" href="#">home</a></li>
-          <li><a data-toggle="modal" data-target="#myModal">about</a></li>
-          <li><a href="#" class="contactFade">contact</a></li>
-          <li><a class="adminFade" href="#">apply</a></li>
-        </ul>
-        <a href="#" class="homeCartShow nav-cart-icon">
-          <svg-cart class=svgCart></svg-cart>
-          <p id="cart-count">{{cartCount}}</p>
-          <p id="open-cart-hover">open cart</p>
-        </a>
+    
     <div class="container">
       <div class="header">
         <p class="logo homeSlide"><span>pic</span><span class="logo-medblue">a</span><span class="logo-lightblue"span>cause</span></p>
