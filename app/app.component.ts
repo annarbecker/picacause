@@ -158,6 +158,22 @@ export class AppComponent {
       this.state = "transition";
       console.log(this.state);
     }
+
+    var instagramStateRef = this.myDataRef.child("instagramState");
+
+    var appClass = this;
+
+    appClass.myDataRef.on("value", function(snapshot) {
+      var loginState = snapshot.val().instagramState;
+      for(var key in loginState) {
+        if(!loginState.hasOwnProperty(key)) continue;
+        var obj = loginState[key];
+        console.log(obj);
+        appClass.state = obj.loginState;
+      }
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
   }
 
   addToCart(clickedPic) {

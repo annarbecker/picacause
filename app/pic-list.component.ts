@@ -16,7 +16,8 @@ import {PicDetailsComponent} from './pic-details.component'
       Instagram Login
     </a>
   </button>
-  <button><a (click)="signOut()" href="/">Instagram Logout</a></button>
+  <button
+  (click)="signOut()"><a>Instagram Logout</a></button>
 </div>
   <div class="picContainer container">
     <div *ngFor="#currentPic of pics" class="picture">
@@ -80,14 +81,19 @@ export class PicListComponent {
   }
 
   signOut() {
-    var a = document.createElement("a");
-    a.href = "https://instagram.com/accounts/logout/";
-    var evt = document.createEvent("MouseEvents");
-    //the tenth parameter of initMouseEvent sets ctrl key
-    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
-                                true, false, false, false, 0, null);
-    a.dispatchEvent(evt);
+    // var a = document.createElement("a");
+    // a.href = "https://instagram.com/accounts/logout/";
+    // var evt = document.createEvent("MouseEvents");
+    // //the tenth parameter of initMouseEvent sets ctrl key
+    // evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
+    //                             true, false, false, false, 0, null);
+    // a.dispatchEvent(evt);
 
-    location.reload();
+    var wnd = window.open("https://instagram.com/accounts/logout/")
+    setTimeout(function() {
+      console.log('it works');
+      wnd.close()
+      window.location.href="http://localhost:3000/";
+    }, 5);
   }
 }
