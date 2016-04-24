@@ -148,17 +148,6 @@ export class AppComponent {
     console.log(window.location.href);
     var userToken = window.location.href;
 
-    if (window.location.href.length === 22) {
-      this.state = "logout";
-      console.log(this.state);
-    } else if (window.location.href.length > 30) {
-      this.state = "login";
-      console.log(this.state);
-    } else {
-      this.state = "transition";
-      console.log(this.state);
-    }
-
     var instagramStateRef = this.myDataRef.child("instagramState");
 
     var appClass = this;
@@ -168,8 +157,11 @@ export class AppComponent {
       for(var key in loginState) {
         if(!loginState.hasOwnProperty(key)) continue;
         var obj = loginState[key];
-        console.log(obj);
-        appClass.state = obj.loginState;
+        console.log(obj.loginState);
+        if (obj.loginState !== undefined) {
+          appClass.state = obj.loginState;
+
+        }
       }
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);

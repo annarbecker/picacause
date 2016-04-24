@@ -11,8 +11,8 @@ import {PicDetailsComponent} from './pic-details.component'
   template: `
   <h3 class="container pageHeader">pic<span class="logoLetter">a</span>print</h3>
   <div class="checkoutBtns instaBtns">
-  <button>
-    <a href="https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token">
+  <button (click)="signIn()">
+    <a>
       Instagram Login
     </a>
   </button>
@@ -35,6 +35,7 @@ export class PicListComponent {
   public token = 'access_token=3128477430.8c5216d.5551b14da14a40ed9c77579a4d83484e';
   public pics = [];
   public onAddToCart: EventEmitter<any>;
+  public myDataRef = new Firebase('https://picacause.firebaseio.com/')
   public selectedPic: Card;
   constructor(private http:Http) {
     this.onAddToCart = new EventEmitter();
@@ -81,6 +82,8 @@ export class PicListComponent {
   }
 
   signOut() {
+//this code is being left because I want to know how it works
+
     // var a = document.createElement("a");
     // a.href = "https://instagram.com/accounts/logout/";
     // var evt = document.createEvent("MouseEvents");
@@ -90,10 +93,19 @@ export class PicListComponent {
     // a.dispatchEvent(evt);
 
     var wnd = window.open("https://instagram.com/accounts/logout/")
+
     setTimeout(function() {
       console.log('it works');
       wnd.close()
       window.location.href="http://localhost:3000/";
     }, 5);
+  }
+
+  signIn() {
+    this.myDataRef.child("instagramState").on("value", function(snapshot) {
+      console.log(snapshot.val());
+    })
+    this.myDataRef.child("instagramState").update({"loginState": "login"});
+    var wnd = window.open("https://www.instagram.com/oauth/authorize/?client_id=8c5216dd5794464581e482d259b9aecf&redirect_uri=http://localhost:3000&response_type=token");
   }
 }
